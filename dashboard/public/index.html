@@ -3,65 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pinterest Empire Dashboard</title>
+  <title>Pinterest Empire</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div id="app">
-    <header class="header">
-      <div class="header-left">
-        <h1>📌 Pinterest Empire Dashboard</h1>
-        <span class="last-updated" id="lastUpdated">Loading...</span>
-      </div>
-      <div class="header-right">
-        <button class="btn" onclick="refreshData()">🔄 Refresh</button>
-      </div>
-    </header>
+  <div class="container">
+    <h1>📌 Pinterest Empire</h1>
+    <p class="updated" id="updated">Loading...</p>
 
-    <section class="empire-totals" id="empireTotals">
-      <div class="metric-card big">
-        <div class="metric-icon">👁️</div>
-        <div class="metric-value" id="totalImpressions">—</div>
-        <div class="metric-label">Total Impressions</div>
-        <div class="metric-change" id="totalImpressionsChange"></div>
-      </div>
-      <div class="metric-card big">
-        <div class="metric-icon">💬</div>
-        <div class="metric-value" id="totalEngagements">—</div>
-        <div class="metric-label">Total Engagements</div>
-        <div class="metric-change" id="totalEngagementsChange"></div>
-      </div>
-      <div class="metric-card big">
-        <div class="metric-icon">👆</div>
-        <div class="metric-value" id="totalClicks">—</div>
-        <div class="metric-label">Outbound Clicks</div>
-        <div class="metric-change" id="totalClicksChange"></div>
-      </div>
-      <div class="metric-card big">
-        <div class="metric-icon">📌</div>
-        <div class="metric-value" id="totalSaves">—</div>
-        <div class="metric-label">Total Saves</div>
-        <div class="metric-change" id="totalSavesChange"></div>
-      </div>
-      <div class="metric-card big">
-        <div class="metric-icon">👥</div>
-        <div class="metric-value" id="totalAudience">—</div>
-        <div class="metric-label">Total Audience</div>
-        <div class="metric-change" id="totalAudienceChange"></div>
-      </div>
-    </section>
+    <!-- Empire Total -->
+    <div class="card total-card">
+      <h2>Total Impressions (30d)</h2>
+      <div class="big-number" id="totalImpressions">—</div>
+      <div class="sub-stats" id="subStats"></div>
+    </div>
 
-    <section class="posting-bar" id="postingBar">
-      <h2>📋 Today's Posting Status</h2>
-      <div class="posting-grid" id="postingGrid">Loading...</div>
-    </section>
-
-    <section class="accounts-section">
-      <h2>📊 Account Breakdown (Last 30 Days)</h2>
-      <div class="accounts-grid" id="accountsGrid">Loading...</div>
-    </section>
+    <!-- Per Account -->
+    <h2 class="section-title">Accounts</h2>
+    <div id="accounts"></div>
   </div>
-
   <script src="app.js"></script>
 </body>
 </html>
