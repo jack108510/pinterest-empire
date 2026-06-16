@@ -12,34 +12,27 @@ async function load() {
 }
 
 function fmt(n) {
-  if (n >= 1e6) return (n / 1e6).toFixed(1) + 'M';
+  if (n >= 1e6) return (n / 1e6).toFixed(2) + 'M';
   if (n >= 1e3) return (n / 1e3).toFixed(1) + 'k';
   return n.toLocaleString();
 }
 
 function render() {
-  // Updated
   document.getElementById('updated').textContent =
     new Date(summary.fetched_at).toLocaleDateString('en-US', {
       month: 'short', day: 'numeric', year: 'numeric'
     });
 
-  // Accounts connected
   const connected = (summary.accounts || []).filter(
     a => Object.keys(a.metrics || {}).length > 0
   ).length;
   const total = (summary.accounts || []).length;
 
-  // Yesterday's stats from timeseries
   const daily = timeseries.combined || [];
   const yesterday = daily.length >= 2 ? daily[daily.length - 2] : null;
   const yestImp = yesterday ? yesterday.impressions : 0;
   const yestClicks = yesterday ? yesterday.clicks : 0;
 
-  // MRR — placeholder, update when you have revenue data
-  const mrr = '$0';
-
-  // KPIs
   document.getElementById('kpis').innerHTML = `
     <div class="kpi">
       <div class="val">${connected}/${total}</div>
@@ -54,40 +47,68 @@ function render() {
       <div class="lbl">Clicks Yesterday</div>
     </div>
     <div class="kpi">
-      <div class="val">${mrr}</div>
+      <div class="val">$0</div>
       <div class="lbl">MRR</div>
     </div>
   `;
 
-  // Chart
-  const labels = daily.map(d => d.date.slice(5)); // MM-DD
-  const impressions = daily.map(d => d.impressions);
+  // Build cumulative impressions (running total like a stock chart)
+  let running = 0;
+  const labels = [];
+  const cumulative = [];
+  for (const d of daily) {
+    running += d.impressions;
+    labels.push(d.date.slice(5)); // MM-DD
+    cumulative.push(running);
+  }
+
+  // Goal line at 1,000,000
+  const goalLine = labels.map(() => 1000000);
+  const currentTotal = running;
+
+  // Progress %
+  const pct = ((currentTotal / 1000000) * 100).toFixed(1);
+
+  // Update goal text
+  document.querySelector('.goal').textContent =
+    `${fmt(currentTotal)} / 1M (${pct}%)`;
 
   const ctx = document.getElementById('chart');
   new Chart(ctx, {
     type: 'line',
     data: {
       labels: labels,
-      datasets: [{
-        label: 'Daily Impressions',
-        data: impressions,
-        borderColor: '#fff',
-        backgroundColor: function(context) {
-          const chart = context.chart;
-          const { ctx, chartArea } = chart;
-          if (!chartArea) return null;
-          const gradient = ctx.createLinearGradient(0, chartArea.top, 0, chartArea.bottom);
-          gradient.addColorStop(0, 'rgba(255,255,255,0.15)');
-          gradient.addColorStop(1, 'rgba(255,255,255,0)');
-          return gradient;
+      datasets: [
+        {
+          label: 'Cumulative Impressions',
+          data: cumulative,
+          borderColor: '#fff',
+          backgroundColor: function(context) {
+            const chart = context.chart;
+            const { ctx, chartArea } = chart;
+            if (!chartArea) return null;
+            const g = ctx.createLinearGradient(0, chartArea.top, 0, chartArea.bottom);
+            g.addColorStop(0, 'rgba(255,255,255,0.12)');
+            g.addColorStop(1, 'rgba(255,255,255,0)');
+            return g;
+          },
+          fill: true,
+          borderWidth: 2,
+          pointRadius: 0,
+          pointHoverRadius: 5,
+          pointHoverColor: '#fff',
+          tension: 0.3,
         },
-        fill: true,
-        borderWidth: 2,
-        pointRadius: 0,
-        pointHoverRadius: 4,
-        pointHoverColor: '#fff',
-        tension: 0.35,
-      }]
+        {
+          label: 'Goal: 1M',
+          data: goalLine,
+          borderColor: 'rgba(255,255,255,0.2)',
+          borderDash: [6, 6],
+          borderWidth: 1.5,
+          pointRadius: 0,
+          fill: false,
+        }
+      ]
     },
     options: {
       responsive: true,
@@ -103,7 +124,10 @@ function render() {
           padding: 12,
           callbacks: {
             label: function(ctx) {
-              return ctx.parsed.y.toLocaleString() + ' impressions';
+              if (ctx.datasetIndex === 0) {
+                return ctx.parsed.y.toLocaleString() + ' total';
+              }
+              return 'Goal: 1,000,000';
             }
           }
         }
