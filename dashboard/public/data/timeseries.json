@@ -1,0 +1,881 @@
+{
+  "combined": [
+    {
+      "date": "2026-05-17",
+      "impressions": 2323,
+      "engagements": 0,
+      "clicks": 0,
+      "saves": 0
+    },
+    {
+      "date": "2026-05-18",
+      "impressions": 2788,
+      "engagements": 0,
+      "clicks": 0,
+      "saves": 0
+    },
+    {
+      "date": "2026-05-19",
+      "impressions": 2625,
+      "engagements": 0,
+      "clicks": 0,
+      "saves": 0
+    },
+    {
+      "date": "2026-05-20",
+      "impressions": 2757,
+      "engagements": 0,
+      "clicks": 0,
+      "saves": 0
+    },
+    {
+      "date": "2026-05-21",
+      "impressions": 4100,
+      "engagements": 0,
+      "clicks": 0,
+      "saves": 0
+    },
+    {
+      "date": "2026-05-22",
+      "impressions": 3303,
+      "engagements": 0,
+      "clicks": 0,
+      "saves": 0
+    },
+    {
+      "date": "2026-05-23",
+      "impressions": 3374,
+      "engagements": 0,
+      "clicks": 0,
+      "saves": 0
+    },
+    {
+      "date": "2026-05-24",
+      "impressions": 3430,
+      "engagements": 0,
+      "clicks": 0,
+      "saves": 0
+    },
+    {
+      "date": "2026-05-25",
+      "impressions": 4351,
+      "engagements": 0,
+      "clicks": 0,
+      "saves": 0
+    },
+    {
+      "date": "2026-05-26",
+      "impressions": 4898,
+      "engagements": 0,
+      "clicks": 0,
+      "saves": 0
+    },
+    {
+      "date": "2026-05-27",
+      "impressions": 5794,
+      "engagements": 0,
+      "clicks": 0,
+      "saves": 0
+    },
+    {
+      "date": "2026-05-28",
+      "impressions": 9199,
+      "engagements": 0,
+      "clicks": 0,
+      "saves": 0
+    },
+    {
+      "date": "2026-05-29",
+      "impressions": 15942,
+      "engagements": 0,
+      "clicks": 0,
+      "saves": 0
+    },
+    {
+      "date": "2026-05-30",
+      "impressions": 15293,
+      "engagements": 0,
+      "clicks": 0,
+      "saves": 0
+    },
+    {
+      "date": "2026-05-31",
+      "impressions": 14194,
+      "engagements": 0,
+      "clicks": 0,
+      "saves": 0
+    },
+    {
+      "date": "2026-06-01",
+      "impressions": 12288,
+      "engagements": 0,
+      "clicks": 0,
+      "saves": 0
+    },
+    {
+      "date": "2026-06-02",
+      "impressions": 13152,
+      "engagements": 0,
+      "clicks": 0,
+      "saves": 0
+    },
+    {
+      "date": "2026-06-03",
+      "impressions": 7819,
+      "engagements": 0,
+      "clicks": 0,
+      "saves": 0
+    },
+    {
+      "date": "2026-06-04",
+      "impressions": 5244,
+      "engagements": 0,
+      "clicks": 0,
+      "saves": 0
+    },
+    {
+      "date": "2026-06-05",
+      "impressions": 5545,
+      "engagements": 0,
+      "clicks": 0,
+      "saves": 0
+    },
+    {
+      "date": "2026-06-06",
+      "impressions": 5596,
+      "engagements": 0,
+      "clicks": 0,
+      "saves": 0
+    },
+    {
+      "date": "2026-06-07",
+      "impressions": 10478,
+      "engagements": 0,
+      "clicks": 0,
+      "saves": 0
+    },
+    {
+      "date": "2026-06-08",
+      "impressions": 14619,
+      "engagements": 0,
+      "clicks": 0,
+      "saves": 0
+    },
+    {
+      "date": "2026-06-09",
+      "impressions": 14795,
+      "engagements": 0,
+      "clicks": 0,
+      "saves": 0
+    },
+    {
+      "date": "2026-06-10",
+      "impressions": 14172,
+      "engagements": 0,
+      "clicks": 0,
+      "saves": 0
+    },
+    {
+      "date": "2026-06-11",
+      "impressions": 15767,
+      "engagements": 0,
+      "clicks": 0,
+      "saves": 0
+    },
+    {
+      "date": "2026-06-12",
+      "impressions": 17818,
+      "engagements": 0,
+      "clicks": 0,
+      "saves": 0
+    },
+    {
+      "date": "2026-06-13",
+      "impressions": 14272,
+      "engagements": 0,
+      "clicks": 0,
+      "saves": 0
+    },
+    {
+      "date": "2026-06-14",
+      "impressions": 14396,
+      "engagements": 0,
+      "clicks": 0,
+      "saves": 0
+    },
+    {
+      "date": "2026-06-15",
+      "impressions": 11276,
+      "engagements": 0,
+      "clicks": 0,
+      "saves": 0
+    },
+    {
+      "date": "2026-06-16",
+      "impressions": 19549,
+      "engagements": 0,
+      "clicks": 0,
+      "saves": 0
+    }
+  ],
+  "accounts": {
+    "supplements": [
+      {
+        "date": "2026-05-17",
+        "impressions": 2083,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-05-18",
+        "impressions": 2266,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-05-19",
+        "impressions": 1920,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-05-20",
+        "impressions": 2349,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-05-21",
+        "impressions": 3466,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-05-22",
+        "impressions": 2837,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-05-23",
+        "impressions": 2805,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-05-24",
+        "impressions": 2982,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-05-25",
+        "impressions": 3603,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-05-26",
+        "impressions": 3881,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-05-27",
+        "impressions": 4038,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-05-28",
+        "impressions": 6018,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-05-29",
+        "impressions": 8854,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-05-30",
+        "impressions": 9014,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-05-31",
+        "impressions": 9017,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-06-01",
+        "impressions": 9457,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-06-02",
+        "impressions": 9617,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-06-03",
+        "impressions": 5246,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-06-04",
+        "impressions": 3306,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-06-05",
+        "impressions": 3625,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-06-06",
+        "impressions": 3810,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-06-07",
+        "impressions": 7135,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-06-08",
+        "impressions": 9870,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-06-09",
+        "impressions": 10186,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-06-10",
+        "impressions": 10324,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-06-11",
+        "impressions": 9256,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-06-12",
+        "impressions": 9940,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-06-13",
+        "impressions": 8679,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-06-14",
+        "impressions": 8398,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-06-15",
+        "impressions": 7995,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-06-16",
+        "impressions": 8879,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      }
+    ],
+    "cooking": [
+      {
+        "date": "2026-05-17",
+        "impressions": 240,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-05-18",
+        "impressions": 522,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-05-19",
+        "impressions": 705,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-05-20",
+        "impressions": 408,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-05-21",
+        "impressions": 634,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-05-22",
+        "impressions": 466,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-05-23",
+        "impressions": 569,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-05-24",
+        "impressions": 448,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-05-25",
+        "impressions": 748,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-05-26",
+        "impressions": 1017,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-05-27",
+        "impressions": 1756,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-05-28",
+        "impressions": 3181,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-05-29",
+        "impressions": 7088,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-05-30",
+        "impressions": 6279,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-05-31",
+        "impressions": 5177,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-06-01",
+        "impressions": 2831,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-06-02",
+        "impressions": 3535,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-06-03",
+        "impressions": 2573,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-06-04",
+        "impressions": 1938,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-06-05",
+        "impressions": 1920,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-06-06",
+        "impressions": 1786,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-06-07",
+        "impressions": 3343,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-06-08",
+        "impressions": 4749,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-06-09",
+        "impressions": 4589,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-06-10",
+        "impressions": 3848,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-06-11",
+        "impressions": 6511,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-06-12",
+        "impressions": 7878,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-06-13",
+        "impressions": 5571,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-06-14",
+        "impressions": 5963,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-06-15",
+        "impressions": 3258,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-06-16",
+        "impressions": 10614,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      }
+    ],
+    "beauty": [
+      {
+        "date": "2026-05-17",
+        "impressions": 0,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-05-18",
+        "impressions": 0,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-05-19",
+        "impressions": 0,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-05-20",
+        "impressions": 0,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-05-21",
+        "impressions": 0,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-05-22",
+        "impressions": 0,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-05-23",
+        "impressions": 0,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-05-24",
+        "impressions": 0,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-05-25",
+        "impressions": 0,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-05-26",
+        "impressions": 0,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-05-27",
+        "impressions": 0,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-05-28",
+        "impressions": 0,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-05-29",
+        "impressions": 0,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-05-30",
+        "impressions": 0,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-05-31",
+        "impressions": 0,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-06-01",
+        "impressions": 0,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-06-02",
+        "impressions": 0,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-06-03",
+        "impressions": 0,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-06-04",
+        "impressions": 0,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-06-05",
+        "impressions": 0,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-06-06",
+        "impressions": 0,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-06-07",
+        "impressions": 0,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-06-08",
+        "impressions": 0,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-06-09",
+        "impressions": 20,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-06-10",
+        "impressions": 0,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-06-11",
+        "impressions": 0,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-06-12",
+        "impressions": 0,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-06-13",
+        "impressions": 22,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-06-14",
+        "impressions": 35,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-06-15",
+        "impressions": 23,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      },
+      {
+        "date": "2026-06-16",
+        "impressions": 56,
+        "engagements": 0,
+        "clicks": 0,
+        "saves": 0
+      }
+    ]
+  },
+  "fetched_at": "2026-06-16T15:10:22.012509"
+}

@@ -1,8 +1,13 @@
-let data = null;
+let summary = null;
+let timeseries = null;
 
 async function load() {
-  const res = await fetch('data/summary.json');
-  data = await res.json();
+  const [s, t] = await Promise.all([
+    fetch('data/summary.json').then(r => r.json()),
+    fetch('data/timeseries.json').then(r => r.json()),
+  ]);
+  summary = s;
+  timeseries = t;
   render();
 }
 
@@ -13,70 +18,114 @@ function fmt(n) {
 }
 
 function render() {
-  const accounts = data.accounts || [];
-
-  // Last updated
+  // Updated
   document.getElementById('updated').textContent =
-    'Updated ' + new Date(data.fetched_at).toLocaleString();
+    new Date(summary.fetched_at).toLocaleDateString('en-US', {
+      month: 'short', day: 'numeric', year: 'numeric'
+    });
 
-  // Empire total
-  let totalImp = 0, totalEng = 0, totalClicks = 0, totalSaves = 0, totalAud = 0;
-  accounts.forEach(a => {
-    const m = a.metrics || {};
-    totalImp += (m.impressions||{}).value || 0;
-    totalEng += (m.engagements||{}).value || 0;
-    totalClicks += (m.outbound_clicks||{}).value || 0;
-    totalSaves += (m.saves||{}).value || 0;
-    totalAud += (m.total_audience||{}).value || 0;
-  });
+  // Accounts connected
+  const connected = (summary.accounts || []).filter(
+    a => Object.keys(a.metrics || {}).length > 0
+  ).length;
+  const total = (summary.accounts || []).length;
 
-  document.getElementById('totalImpressions').textContent = fmt(totalImp);
-  document.getElementById('subStats').innerHTML = `
-    <div class="sub-stat"><strong>${fmt(totalEng)}</strong> engagements</div>
-    <div class="sub-stat"><strong>${fmt(totalClicks)}</strong> clicks</div>
-    <div class="sub-stat"><strong>${fmt(totalSaves)}</strong> saves</div>
-    <div class="sub-stat"><strong>${fmt(totalAud)}</strong> audience</div>
+  // Yesterday's stats from timeseries
+  const daily = timeseries.combined || [];
+  const yesterday = daily.length >= 2 ? daily[daily.length - 2] : null;
+  const yestImp = yesterday ? yesterday.impressions : 0;
+  const yestClicks = yesterday ? yesterday.clicks : 0;
+
+  // MRR — placeholder, update when you have revenue data
+  const mrr = '$0';
+
+  // KPIs
+  document.getElementById('kpis').innerHTML = `
+    <div class="kpi">
+      <div class="val">${connected}/${total}</div>
+      <div class="lbl">Accounts Connected</div>
+    </div>
+    <div class="kpi">
+      <div class="val">${fmt(yestImp)}</div>
+      <div class="lbl">Views Yesterday</div>
+    </div>
+    <div class="kpi">
+      <div class="val">${yestClicks}</div>
+      <div class="lbl">Clicks Yesterday</div>
+    </div>
+    <div class="kpi">
+      <div class="val">${mrr}</div>
+      <div class="lbl">MRR</div>
+    </div>
   `;
 
-  // Accounts
-  const html = accounts.map(a => {
-    const m = a.metrics || {};
-    const imp = (m.impressions||{}).display || '—';
-    const impChg = (m.impressions||{}).change_pct || 0;
-    const eng = (m.engagements||{}).display || '—';
-    const saves = (m.saves||{}).display || '—';
+  // Chart
+  const labels = daily.map(d => d.date.slice(5)); // MM-DD
+  const impressions = daily.map(d => d.impressions);
 
-    const hasData = Object.keys(m).length > 0;
-    const name = a.account_name || a.account_id;
-    const handle = a.handle || a.account_id;
-
-    return `
-      <div class="account">
-        <div class="account-info">
-          <h3>${name}</h3>
-          <p>@${handle}</p>
-          ${hasData ? '' : '<div class="warning">⚠️ Needs business account</div>'}
-        </div>
-        <div class="account-stats">
-          <div class="stat">
-            <div class="val">${imp}</div>
-            <div class="lbl">Impressions</div>
-            ${impChg ? `<div class="chg ${impChg > 0 ? 'up' : 'down'}">${impChg > 0 ? '+' : ''}${impChg}%</div>` : ''}
-          </div>
-          <div class="stat">
-            <div class="val">${eng}</div>
-            <div class="lbl">Engagements</div>
-          </div>
-          <div class="stat">
-            <div class="val">${saves}</div>
-            <div class="lbl">Saves</div>
-          </div>
-        </div>
-      </div>
-    `;
-  }).join('');
-
-  document.getElementById('accounts').innerHTML = html;
+  const ctx = document.getElementById('chart');
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: labels,
+      datasets: [{
+        label: 'Daily Impressions',
+        data: impressions,
+        borderColor: '#fff',
+        backgroundColor: function(context) {
+          const chart = context.chart;
+          const { ctx, chartArea } = chart;
+          if (!chartArea) return null;
+          const gradient = ctx.createLinearGradient(0, chartArea.top, 0, chartArea.bottom);
+          gradient.addColorStop(0, 'rgba(255,255,255,0.15)');
+          gradient.addColorStop(1, 'rgba(255,255,255,0)');
+          return gradient;
+        },
+        fill: true,
+        borderWidth: 2,
+        pointRadius: 0,
+        pointHoverRadius: 4,
+        pointHoverColor: '#fff',
+        tension: 0.35,
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: '#000',
+          borderColor: '#333',
+          borderWidth: 1,
+          titleColor: '#fff',
+          bodyColor: '#fff',
+          padding: 12,
+          callbacks: {
+            label: function(ctx) {
+              return ctx.parsed.y.toLocaleString() + ' impressions';
+            }
+          }
+        }
+      },
+      scales: {
+        x: {
+          grid: { display: false },
+          ticks: { color: '#444', maxTicksLimit: 8, font: { size: 11 } },
+          border: { color: '#222' },
+        },
+        y: {
+          grid: { color: '#111' },
+          ticks: {
+            color: '#444',
+            font: { size: 11 },
+            callback: function(v) { return fmt(v); }
+          },
+          border: { display: false },
+        }
+      }
+    }
+  });
 }
 
 load();

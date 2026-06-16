@@ -5,22 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pinterest Empire</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 </head>
 <body>
-  <div class="container">
-    <h1>📌 Pinterest Empire</h1>
-    <p class="updated" id="updated">Loading...</p>
+  <div class="app">
+    <header>
+      <h1>Pinterest Empire</h1>
+      <span class="date" id="updated"></span>
+    </header>
 
-    <!-- Empire Total -->
-    <div class="card total-card">
-      <h2>Total Impressions (30d)</h2>
-      <div class="big-number" id="totalImpressions">—</div>
-      <div class="sub-stats" id="subStats"></div>
+    <!-- KPIs -->
+    <div class="kpis" id="kpis"></div>
+
+    <!-- Chart -->
+    <div class="chart-box">
+      <div class="chart-header">
+        <h2>Impressions — Last 30 Days</h2>
+        <span class="goal">Goal: 50M</span>
+      </div>
+      <canvas id="chart"></canvas>
     </div>
-
-    <!-- Per Account -->
-    <h2 class="section-title">Accounts</h2>
-    <div id="accounts"></div>
   </div>
   <script src="app.js"></script>
 </body>
