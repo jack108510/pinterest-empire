@@ -1,0 +1,31 @@
+# Sessions & credentials
+~/.pinterest-session*
+~/.wa-session*
+
+# Python
+__pycache__/
+*.pyc
+
+# Node
+node_modules/
+
+# Logs
+logs/
+*.log
+
+# Screenshots
+*.png
+
+# Session data
+analytics-*.png
+analytics-error-*.png
+dashboard-screenshot.png
+*-debug.png
+
+# Data (regenerated daily)
+dashboard/data/
+stock-beauty/
+stock/
+*.jpg
+*.png
+*.jpeg

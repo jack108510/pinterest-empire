@@ -1,0 +1,254 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #0f1117;
+  color: #e8e8e8;
+  min-height: 100vh;
+}
+
+.header {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  padding: 24px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e60023;
+  box-shadow: 0 4px 20px rgba(230, 0, 35, 0.15);
+}
+
+.header h1 {
+  font-size: 1.75rem;
+  background: linear-gradient(135deg, #e60023, #ff4757);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.last-updated {
+  font-size: 0.8rem;
+  color: #888;
+  margin-top: 4px;
+}
+
+.btn {
+  background: #e60023;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  background: #ff1a3d;
+  transform: translateY(-1px);
+}
+
+/* Empire Totals */
+.empire-totals {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  padding: 24px 32px;
+}
+
+.metric-card {
+  background: #1a1a2e;
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+  border: 1px solid #2a2a3e;
+  transition: all 0.3s;
+}
+
+.metric-card:hover {
+  border-color: #e60023;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(230, 0, 35, 0.2);
+}
+
+.metric-card.big .metric-icon {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.metric-card.big .metric-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.metric-label {
+  font-size: 0.85rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.metric-change {
+  font-size: 0.8rem;
+  margin-top: 6px;
+  font-weight: 600;
+}
+
+.metric-change.positive {
+  color: #2ed573;
+}
+
+.metric-change.negative {
+  color: #ff4757;
+}
+
+/* Posting Bar */
+.posting-bar {
+  padding: 0 32px 24px;
+}
+
+.posting-bar h2, .accounts-section h2, .top-pins-section h2 {
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+  color: #ccc;
+}
+
+.posting-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+}
+
+.posting-card {
+  background: #1a1a2e;
+  border-radius: 10px;
+  padding: 16px;
+  border: 1px solid #2a2a3e;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.posting-card .acct-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.posting-card .pin-count {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.posting-card .pin-label {
+  font-size: 0.75rem;
+  color: #888;
+}
+
+.progress-bar {
+  height: 6px;
+  background: #2a2a3e;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-top: 4px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #e60023, #ff4757);
+  border-radius: 3px;
+  transition: width 0.5s;
+}
+
+.progress-fill.complete {
+  background: linear-gradient(90deg, #2ed573, #1abc9c);
+}
+
+/* Account Cards */
+.accounts-section {
+  padding: 0 32px 24px;
+}
+
+.accounts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 16px;
+}
+
+.account-card {
+  background: #1a1a2e;
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid #2a2a3e;
+  transition: all 0.3s;
+}
+
+.account-card:hover {
+  border-color: #e60023;
+}
+
+.account-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #2a2a3e;
+}
+
+.account-header .name {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.account-header .handle {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.account-metrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.account-metric {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.account-metric .val {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.account-metric .lbl {
+  font-size: 0.72rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.account-metric .chg {
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.chg.positive { color: #2ed573; }
+.chg.negative { color: #ff4757; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .empire-totals {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 16px;
+  }
+  .posting-bar, .accounts-section, .top-pins-section {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}

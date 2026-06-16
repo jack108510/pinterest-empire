@@ -1,0 +1,42 @@
+{
+  "date": "2026-06-08",
+  "total_views": 7000.0,
+  "active_accounts": 5,
+  "accounts": [
+    {
+      "id": "supplements",
+      "handle": "unknown",
+      "views": "1.4k",
+      "followers": "448",
+      "logged_in": true
+    },
+    {
+      "id": "cooking",
+      "handle": "unknown",
+      "views": "1.4k",
+      "followers": "448",
+      "logged_in": true
+    },
+    {
+      "id": "beauty",
+      "handle": "unknown",
+      "views": "1.4k",
+      "followers": "448",
+      "logged_in": true
+    },
+    {
+      "id": "pinterest-1",
+      "handle": "unknown",
+      "views": "1.4k",
+      "followers": "448",
+      "logged_in": true
+    },
+    {
+      "id": "wa-2",
+      "handle": "unknown",
+      "views": "1.4k",
+      "followers": "448",
+      "logged_in": true
+    }
+  ]
+}
