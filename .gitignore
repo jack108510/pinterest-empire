@@ -23,9 +23,9 @@ dashboard-screenshot.png
 *-debug.png
 
 # Data (regenerated daily)
-dashboard/data/
 stock-beauty/
 stock/
 *.jpg
 *.png
 *.jpeg
+!dashboard/public/data/

@@ -1,12 +1,11 @@
-// Dashboard Frontend Logic
+// Pinterest Empire Dashboard — Static (GitHub Pages compatible)
+// Loads data from data/summary.json bundled in the repo
 
-const API = '';
 let summaryData = null;
-let postingData = null;
 
 async function fetchJSON(url) {
   const res = await fetch(url);
-  if (!res.ok) throw new Error(`Failed: ${url}`);
+  if (!res.ok) return null;
   return res.json();
 }
 
@@ -29,21 +28,16 @@ function changeText(pct) {
 }
 
 async function loadData() {
-  try {
-    const [summary, posting] = await Promise.all([
-      fetchJSON('/api/summary'),
-      fetchJSON('/api/posting-stats')
-    ]);
-    summaryData = summary;
-    postingData = posting;
-    render();
-  } catch (err) {
-    console.error('Load error:', err);
-    document.body.innerHTML = '<div style="padding:40px;text-align:center;color:#ff4757"><h2>Failed to load data</h2><p>Make sure the server is running and analytics have been fetched.</p></div>';
+  // Try bundled summary first (GitHub Pages), fall back to local API
+  summaryData = await fetchJSON('data/summary.json');
+  if (!summaryData) {
+    summaryData = await fetchJSON('/api/summary');
   }
+  render();
 }
 
 function render() {
+  if (!summaryData) return;
   renderHeader();
   renderEmpireTotals();
   renderPostingStatus();
@@ -60,7 +54,6 @@ function renderHeader() {
 
 function renderEmpireTotals() {
   const accounts = summaryData.accounts || [];
-  
   const totals = {
     impressions: { value: 0, changes: [] },
     engagements: { value: 0, changes: [] },
@@ -68,7 +61,6 @@ function renderEmpireTotals() {
     saves: { value: 0, changes: [] },
     total_audience: { value: 0, changes: [] }
   };
-
   accounts.forEach(a => {
     const m = a.metrics || {};
     for (const key of Object.keys(totals)) {
@@ -78,7 +70,6 @@ function renderEmpireTotals() {
       }
     }
   });
-
   const labels = {
     impressions: ['totalImpressions', 'totalImpressionsChange'],
     engagements: ['totalEngagements', 'totalEngagementsChange'],
@@ -86,12 +77,10 @@ function renderEmpireTotals() {
     saves: ['totalSaves', 'totalSavesChange'],
     total_audience: ['totalAudience', 'totalAudienceChange']
   };
-
   for (const [key, [valId, chgId]] of Object.entries(labels)) {
     document.getElementById(valId).textContent = formatNumber(totals[key].value);
     const avgChg = totals[key].changes.length > 0
-      ? totals[key].changes.reduce((a, b) => a + b, 0) / totals[key].changes.length
-      : 0;
+      ? totals[key].changes.reduce((a, b) => a + b, 0) / totals[key].changes.length : 0;
     const chgEl = document.getElementById(chgId);
     chgEl.textContent = changeText(avgChg);
     chgEl.className = `metric-change ${changeClass(avgChg)}`;
@@ -100,21 +89,16 @@ function renderEmpireTotals() {
 
 function renderPostingStatus() {
   const grid = document.getElementById('postingGrid');
-  const accounts = postingData.accounts || {};
-  
+  const accounts = summaryData.accounts || [];
   let html = '';
-  for (const [acctId, stats] of Object.entries(accounts)) {
-    const pct = Math.min(100, (stats.today / 100) * 100);
-    const complete = stats.today >= 100;
+  for (const acct of accounts) {
+    const m = acct.metrics || {};
+    const pins = m.impressions ? '—' : '—';
     html += `
       <div class="posting-card">
-        <div class="acct-name">${acctId}</div>
-        <div class="pin-count" style="color: ${complete ? '#2ed573' : '#fff'}">${stats.today}</div>
-        <div class="pin-label">pins today / 100</div>
-        <div class="progress-bar">
-          <div class="progress-fill ${complete ? 'complete' : ''}" style="width: ${pct}%"></div>
-        </div>
-        <div class="pin-label" style="margin-top:4px">30d: ${stats.last_30_days || 0} | All: ${stats.all_time || 0}</div>
+        <div class="acct-name">${acct.account_name || acct.account_id}</div>
+        <div class="pin-count" style="color:#fff">${acct.handle || acct.account_id}</div>
+        <div class="pin-label">account</div>
       </div>
     `;
   }
@@ -124,7 +108,6 @@ function renderPostingStatus() {
 function renderAccounts() {
   const grid = document.getElementById('accountsGrid');
   const accounts = summaryData.accounts || [];
-
   let html = '';
   for (const acct of accounts) {
     const m = acct.metrics || {};
@@ -139,7 +122,6 @@ function renderAccounts() {
         </div>
       `;
     };
-
     html += `
       <div class="account-card">
         <div class="account-header">
@@ -167,6 +149,4 @@ function refreshData() {
   loadData();
 }
 
-// Auto-refresh every 5 minutes
 loadData();
-setInterval(loadData, 5 * 60 * 1000);
