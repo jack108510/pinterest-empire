@@ -1,75 +1,80 @@
 {
-  "fetched_at": "2026-06-18T08:05:33.988934",
-  "total_accounts": 8,
+  "fetched_at": "2026-06-19T08:06:08.941698",
+  "total_accounts": 7,
   "accounts": [
     {
       "account_id": "supplements",
       "account_name": "Supplements Account",
       "handle": "Sadie \ud83e\udd89",
-      "fetched_at": "2026-06-18T08:04:19.777553",
+      "fetched_at": "2026-06-19T08:04:57.445094",
       "date_range": "last_30_days",
       "metrics": {
         "impressions": {
-          "value": 205230.0,
-          "display": "205.23k",
-          "change_pct": 972.0
+          "value": 212420.0,
+          "display": "212.42k",
+          "change_pct": 906.0
         },
         "engagements": {
-          "value": 9080.0,
-          "display": "9.08k",
-          "change_pct": 1352.0
+          "value": 9440.0,
+          "display": "9.44k",
+          "change_pct": 1220.0
         },
         "outbound_clicks": {
-          "value": 41.0,
-          "display": "41",
-          "change_pct": 1233.0
+          "value": 43.0,
+          "display": "43",
+          "change_pct": 1300.0
         },
         "saves": {
-          "value": 1360.0,
-          "display": "1.36k",
-          "change_pct": 736.0
+          "value": 1400.0,
+          "display": "1.4k",
+          "change_pct": 655.0
         },
         "total_audience": {
-          "value": 156940.0,
-          "display": "156.94k",
-          "change_pct": 1122.0
+          "value": 155520.0,
+          "display": "155.52k",
+          "change_pct": 984.0
         },
         "engaged_audience": {
-          "value": 7390.0,
-          "display": "7.39k",
-          "change_pct": 1503.0
+          "value": 7320.0,
+          "display": "7.32k",
+          "change_pct": 1289.0
         }
       },
       "top_pins": [
         {
           "title": "The #1 Supplement Everyone Needs\n; Opens a new tab",
-          "impressions": "12,787",
+          "impressions": "13,423",
           "url": "https://www.pinterest.com/pin/1143844005378172363/"
         },
         {
           "title": "I Tried Turmeric Curcumin for 60 Days\n; Opens a new tab",
-          "impressions": "10,712",
+          "impressions": "10,841",
           "url": "https://www.pinterest.com/pin/1143844005378107375/"
         },
         {
           "title": "Melatonin Sleep Gummies Changed Everything\n; Opens a new tab",
-          "impressions": "9,648",
+          "impressions": "9,635",
           "url": "https://www.pinterest.com/pin/1143844005377696375/"
         },
         {
           "title": "Appetite Control Starts Here\n; Opens a new tab",
-          "impressions": "8,669",
+          "impressions": "8,852",
           "url": "https://www.pinterest.com/pin/1143844005377718968/"
         },
         {
           "title": "3 Supplements That Actually Work\n; Opens a new tab",
-          "impressions": "7,003",
+          "impressions": "7,140",
           "url": "https://www.pinterest.com/pin/1143844005377718035/"
         },
         {
           "title": "Game Changer for Detox\n; Opens a new tab",
-          "impressions": "6,175",
+          "impressions": "6,529",
           "url": "https://www.pinterest.com/pin/1143844005377909025/"
+        },
+        {
+          "title": "Real Results With Vitamin D3 + K2\n; Opens a new tab",
+          "impressions": "6,479",
+          "url": "https://www.pinterest.com/pin/1143844005377909994/"
         },
         {
           "title": "Joint Support Starts Here\n; Opens a new tab",
@@ -78,13 +83,13 @@
         },
         {
           "title": "Alkalize Your Body Starts Here\n; Opens a new tab",
-          "impressions": "5,843",
+          "impressions": "5,947",
           "url": "https://www.pinterest.com/pin/1143844005378370810/"
         },
         {
-          "title": "Real Results With Vitamin D3 + K2\n; Opens a new tab",
-          "impressions": "5,715",
-          "url": "https://www.pinterest.com/pin/1143844005377909994/"
+          "title": "Best Supplement I've Ever Tried\n; Opens a new tab",
+          "impressions": "5,277",
+          "url": "https://www.pinterest.com/pin/1143844005378234189/"
         },
         {
           "title": "Stop Wasting Money on the Wrong Supplements\n; Opens a new tab",
@@ -92,9 +97,9 @@
           "url": "https://www.pinterest.com/pin/1143844005377698474/"
         },
         {
-          "title": "Best Supplement I've Ever Tried\n; Opens a new tab",
-          "impressions": "4,988",
-          "url": "https://www.pinterest.com/pin/1143844005378234189/"
+          "title": "My Daily Wellness Staple\n; Opens a new tab",
+          "impressions": "5,000",
+          "url": "https://www.pinterest.com/pin/1143844005378171870/"
         },
         {
           "title": "Top Supplement Pick for 2026\n; Opens a new tab",
@@ -102,38 +107,33 @@
           "url": "https://www.pinterest.com/pin/1143844005377843458/"
         },
         {
-          "title": "My Daily Wellness Staple\n; Opens a new tab",
-          "impressions": "4,717",
-          "url": "https://www.pinterest.com/pin/1143844005378171870/"
+          "title": "Stop Wasting Money on the Wrong Supplements\n; Opens a new tab",
+          "impressions": "4,737",
+          "url": "https://www.pinterest.com/pin/1143844005378172694/"
         },
         {
           "title": "5 Signs You Need Vitamin D3 + K2\n; Opens a new tab",
           "impressions": "4,598",
           "url": "https://www.pinterest.com/pin/1143844005377698554/"
-        },
-        {
-          "title": "3 Supplements That Actually Work\n; Opens a new tab",
-          "impressions": "4,478",
-          "url": "https://www.pinterest.com/pin/1143844005378302899/"
         }
       ],
-      "raw_summary": "Impressions\n,\n205.23k\n,\n972%\nEngagements\n,\n9.08k\n,\n1352%\nOutbound clicks\n,\n41\n,\n1233%\nSaves\n,\n1.36k\n,\n736%\nTotal audience\n,\n156.94k\n,\n1122%\nEngaged audience\n,\n7.39k\n,\n1503%"
+      "raw_summary": "Impressions\n,\n212.42k\n,\n906%\nEngagements\n,\n9.44k\n,\n1220%\nOutbound clicks\n,\n43\n,\n1300%\nSaves\n,\n1.4k\n,\n655%\nTotal audience\n,\n155.52k\n,\n984%\nEngaged audience\n,\n7.32k\n,\n1289%"
     },
     {
       "account_id": "cooking",
       "account_name": "Cooking Account",
       "handle": "Q",
-      "fetched_at": "2026-06-18T08:04:30.010673",
+      "fetched_at": "2026-06-19T08:05:08.348534",
       "date_range": "last_30_days",
       "metrics": {
         "impressions": {
-          "value": 116330.0,
-          "display": "116.33k",
+          "value": 119580.0,
+          "display": "119.58k",
           "change_pct": 0
         },
         "engagements": {
-          "value": 4350.0,
-          "display": "4.35k",
+          "value": 4440.0,
+          "display": "4.44k",
           "change_pct": 0
         },
         "outbound_clicks": {
@@ -142,8 +142,8 @@
           "change_pct": 0
         },
         "saves": {
-          "value": 936.0,
-          "display": "936",
+          "value": 953.0,
+          "display": "953",
           "change_pct": 0
         },
         "total_audience": {
@@ -160,22 +160,22 @@
       "top_pins": [
         {
           "title": "Restaurant-quality dinner for under $10 \ud83d\udcb0\n; Opens a new tab",
-          "impressions": "46,532",
+          "impressions": "49,634",
           "url": "https://www.pinterest.com/pin/1110911433108143218/"
         },
         {
           "title": "The sauce that goes with literally everything \ud83e\uded5\n; Opens a new tab",
-          "impressions": "9,985",
+          "impressions": "9,998",
           "url": "https://www.pinterest.com/pin/1110911433108232371/"
         },
         {
           "title": "Healthy swaps that actually taste good \ud83e\udd51\n; Opens a new tab",
-          "impressions": "8,180",
+          "impressions": "8,181",
           "url": "https://www.pinterest.com/pin/1110911433108235153/"
         },
         {
           "title": "The one pan trick that saves hours of cleanup \u2728\n; Opens a new tab",
-          "impressions": "5,468",
+          "impressions": "5,470",
           "url": "https://www.pinterest.com/pin/1110911433108496191/"
         },
         {
@@ -185,7 +185,7 @@
         },
         {
           "title": "I tried the viral recipe and here's what happened \ud83e\udd2f\n; Opens a new tab",
-          "impressions": "4,062",
+          "impressions": "4,065",
           "url": "https://www.pinterest.com/pin/1110911433109054431/"
         },
         {
@@ -200,7 +200,7 @@
         },
         {
           "title": "This 5-ingredient dinner changed my life \ud83c\udf73\n; Opens a new tab",
-          "impressions": "2,946",
+          "impressions": "2,952",
           "url": "https://www.pinterest.com/pin/1110911433109121098/"
         },
         {
@@ -234,23 +234,23 @@
           "url": "https://www.pinterest.com/pin/1110911433108232345/"
         }
       ],
-      "raw_summary": "Impressions\n,\n116.33k\n,\nEngagements\n,\n4.35k\n,\nOutbound clicks\n,\n38\n,\nSaves\n,\n936\n,\nTotal audience\n,\n93.42k\n,\nEngaged audience\n,\n3.43k\n,"
+      "raw_summary": "Impressions\n,\n119.58k\n,\nEngagements\n,\n4.44k\n,\nOutbound clicks\n,\n38\n,\nSaves\n,\n953\n,\nTotal audience\n,\n93.42k\n,\nEngaged audience\n,\n3.43k\n,"
     },
     {
       "account_id": "beauty",
       "account_name": "Beauty Account",
       "handle": "B",
-      "fetched_at": "2026-06-18T08:04:40.889158",
+      "fetched_at": "2026-06-19T08:05:23.504645",
       "date_range": "last_30_days",
       "metrics": {
         "impressions": {
-          "value": 241.0,
-          "display": "241",
+          "value": 365.0,
+          "display": "365",
           "change_pct": 0
         },
         "engagements": {
-          "value": 7.0,
-          "display": "7",
+          "value": 9.0,
+          "display": "9",
           "change_pct": 0
         },
         "outbound_clicks": {
@@ -276,6 +276,16 @@
       },
       "top_pins": [
         {
+          "title": "The Best Decision I Made for Antioxidant: Elderberry Immune Gummies\n; Opens a new tab",
+          "impressions": "17",
+          "url": "https://www.pinterest.com/pin/1100989440179191754/"
+        },
+        {
+          "title": "Biotin Hair Growth \u2014 Daily Dose of Stronger Nails\n; Opens a new tab",
+          "impressions": "14",
+          "url": "https://www.pinterest.com/pin/1100989440179260829/"
+        },
+        {
           "title": "Turmeric Curcumin \u2014 The Upgrade I Needed\n; Opens a new tab",
           "impressions": "13",
           "url": "https://www.pinterest.com/pin/1100989440179066886/"
@@ -286,14 +296,29 @@
           "url": "https://www.pinterest.com/pin/1100989440179066917/"
         },
         {
+          "title": "Ashwagandha Root \u2014 I Should Have Started Sooner\n; Opens a new tab",
+          "impressions": "11",
+          "url": "https://www.pinterest.com/pin/1100989440179258769/"
+        },
+        {
           "title": "Vitamin D3 + K2: My #1 Wellness Pick\n; Opens a new tab",
           "impressions": "11",
           "url": "https://www.pinterest.com/pin/1100989440179066645/"
         },
         {
-          "title": "The Best Decision I Made for Antioxidant: Elderberry Immune Gummies\n; Opens a new tab",
+          "title": "Stronger Nails Achievement Unlocked: Biotin Hair Growth\n; Opens a new tab",
+          "impressions": "10",
+          "url": "https://www.pinterest.com/pin/1100989440179267983/"
+        },
+        {
+          "title": "I Bought Elderberry Immune Gummies So You Don't Have To\n; Opens a new tab",
           "impressions": "9",
-          "url": "https://www.pinterest.com/pin/1100989440179191754/"
+          "url": "https://www.pinterest.com/pin/1100989440178702591/"
+        },
+        {
+          "title": "Hair Oil: Worth the Hype?\n; Opens a new tab",
+          "impressions": "8",
+          "url": "https://www.pinterest.com/pin/1100989440178610001/"
         },
         {
           "title": "Pre-Workout Energy \u2014 90 Day Transformation\n; Opens a new tab",
@@ -304,11 +329,6 @@
           "title": "Apple Cider Vinegar Gummies \u2014 The Supplement I Recommend Most\n; Opens a new tab",
           "impressions": "8",
           "url": "https://www.pinterest.com/pin/1100989440179125210/"
-        },
-        {
-          "title": "I Bought Elderberry Immune Gummies So You Don't Have To\n; Opens a new tab",
-          "impressions": "8",
-          "url": "https://www.pinterest.com/pin/1100989440178702591/"
         },
         {
           "title": "The #1 Supplement for Stronger Bones\n; Opens a new tab",
@@ -326,38 +346,18 @@
           "url": "https://www.pinterest.com/pin/1100989440179124908/"
         },
         {
-          "title": "Melatonin Sleep Gummies Changed My Energy and Stay Asleep\n; Opens a new tab",
-          "impressions": "6",
-          "url": "https://www.pinterest.com/pin/1100989440179067079/"
-        },
-        {
-          "title": "Apple Cider Vinegar Gummies \u2014 Expectations vs Reality\n; Opens a new tab",
-          "impressions": "6",
-          "url": "https://www.pinterest.com/pin/1100989440178911219/"
-        },
-        {
-          "title": "Ashwagandha Root \u2014 What I Noticed First\n; Opens a new tab",
-          "impressions": "5",
-          "url": "https://www.pinterest.com/pin/1100989440179066791/"
-        },
-        {
-          "title": "Turmeric Curcumin and Anti-Inflammatory: My Experience\n; Opens a new tab",
-          "impressions": "5",
-          "url": "https://www.pinterest.com/pin/1100989440179068092/"
-        },
-        {
-          "title": "Wake Refreshed Win of the Week: Melatonin Sleep Gummies\n; Opens a new tab",
-          "impressions": "5",
-          "url": "https://www.pinterest.com/pin/1100989440179066818/"
+          "title": "Get Natural Energy Naturally With Green Superfood Powder\n; Opens a new tab",
+          "impressions": "7",
+          "url": "https://www.pinterest.com/pin/1100989440179258813/"
         }
       ],
-      "raw_summary": "Impressions\n,\n241\n,\nEngagements\n,\n7\n,\nOutbound clicks\n,\n0\n,\nSaves\n,\n1\n,\nTotal audience\n,\n70\n,\nEngaged audience\n,\n3\n,"
+      "raw_summary": "Impressions\n,\n365\n,\nEngagements\n,\n9\n,\nOutbound clicks\n,\n0\n,\nSaves\n,\n1\n,\nTotal audience\n,\n70\n,\nEngaged audience\n,\n3\n,"
     },
     {
       "account_id": "pinterest-1",
       "account_name": "Pinterest Account pinterest-1",
       "handle": "Pinterest Account pinterest-1",
-      "fetched_at": "2026-06-18T08:04:50.743748",
+      "fetched_at": "2026-06-19T08:05:34.333714",
       "date_range": "last_30_days",
       "metrics": {},
       "top_pins": [],
@@ -367,17 +367,7 @@
       "account_id": "wa-2",
       "account_name": "Wildrose Account WA-2",
       "handle": "Wildrose Account WA-2",
-      "fetched_at": "2026-06-18T08:05:00.624749",
-      "date_range": "last_30_days",
-      "metrics": {},
-      "top_pins": [],
-      "raw_summary": ""
-    },
-    {
-      "account_id": "wa-3",
-      "account_name": "Wildrose WA-3",
-      "handle": "Wildrose WA-3",
-      "fetched_at": "2026-06-18T08:05:10.591816",
+      "fetched_at": "2026-06-19T08:05:45.093891",
       "date_range": "last_30_days",
       "metrics": {},
       "top_pins": [],
@@ -387,7 +377,7 @@
       "account_id": "wa-5",
       "account_name": "Wildrose Account WA-5",
       "handle": "Wildrose Account WA-5",
-      "fetched_at": "2026-06-18T08:05:20.702309",
+      "fetched_at": "2026-06-19T08:05:55.276748",
       "date_range": "last_30_days",
       "metrics": {},
       "top_pins": [],
@@ -397,7 +387,7 @@
       "account_id": "wa-6",
       "account_name": "Wildrose Account WA-6",
       "handle": "Wildrose Account WA-6",
-      "fetched_at": "2026-06-18T08:05:30.948829",
+      "fetched_at": "2026-06-19T08:06:05.897352",
       "date_range": "last_30_days",
       "metrics": {},
       "top_pins": [],
