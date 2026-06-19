@@ -2,17 +2,17 @@
   "account_id": "beauty",
   "account_name": "Beauty Account",
   "handle": "B",
-  "fetched_at": "2026-06-18T08:04:40.889158",
+  "fetched_at": "2026-06-19T08:05:23.504645",
   "date_range": "last_30_days",
   "metrics": {
     "impressions": {
-      "value": 241.0,
-      "display": "241",
+      "value": 365.0,
+      "display": "365",
       "change_pct": 0
     },
     "engagements": {
-      "value": 7.0,
-      "display": "7",
+      "value": 9.0,
+      "display": "9",
       "change_pct": 0
     },
     "outbound_clicks": {
@@ -38,6 +38,16 @@
   },
   "top_pins": [
     {
+      "title": "The Best Decision I Made for Antioxidant: Elderberry Immune Gummies\n; Opens a new tab",
+      "impressions": "17",
+      "url": "https://www.pinterest.com/pin/1100989440179191754/"
+    },
+    {
+      "title": "Biotin Hair Growth \u2014 Daily Dose of Stronger Nails\n; Opens a new tab",
+      "impressions": "14",
+      "url": "https://www.pinterest.com/pin/1100989440179260829/"
+    },
+    {
       "title": "Turmeric Curcumin \u2014 The Upgrade I Needed\n; Opens a new tab",
       "impressions": "13",
       "url": "https://www.pinterest.com/pin/1100989440179066886/"
@@ -48,14 +58,29 @@
       "url": "https://www.pinterest.com/pin/1100989440179066917/"
     },
     {
+      "title": "Ashwagandha Root \u2014 I Should Have Started Sooner\n; Opens a new tab",
+      "impressions": "11",
+      "url": "https://www.pinterest.com/pin/1100989440179258769/"
+    },
+    {
       "title": "Vitamin D3 + K2: My #1 Wellness Pick\n; Opens a new tab",
       "impressions": "11",
       "url": "https://www.pinterest.com/pin/1100989440179066645/"
     },
     {
-      "title": "The Best Decision I Made for Antioxidant: Elderberry Immune Gummies\n; Opens a new tab",
+      "title": "Stronger Nails Achievement Unlocked: Biotin Hair Growth\n; Opens a new tab",
+      "impressions": "10",
+      "url": "https://www.pinterest.com/pin/1100989440179267983/"
+    },
+    {
+      "title": "I Bought Elderberry Immune Gummies So You Don't Have To\n; Opens a new tab",
       "impressions": "9",
-      "url": "https://www.pinterest.com/pin/1100989440179191754/"
+      "url": "https://www.pinterest.com/pin/1100989440178702591/"
+    },
+    {
+      "title": "Hair Oil: Worth the Hype?\n; Opens a new tab",
+      "impressions": "8",
+      "url": "https://www.pinterest.com/pin/1100989440178610001/"
     },
     {
       "title": "Pre-Workout Energy \u2014 90 Day Transformation\n; Opens a new tab",
@@ -66,11 +91,6 @@
       "title": "Apple Cider Vinegar Gummies \u2014 The Supplement I Recommend Most\n; Opens a new tab",
       "impressions": "8",
       "url": "https://www.pinterest.com/pin/1100989440179125210/"
-    },
-    {
-      "title": "I Bought Elderberry Immune Gummies So You Don't Have To\n; Opens a new tab",
-      "impressions": "8",
-      "url": "https://www.pinterest.com/pin/1100989440178702591/"
     },
     {
       "title": "The #1 Supplement for Stronger Bones\n; Opens a new tab",
@@ -88,30 +108,10 @@
       "url": "https://www.pinterest.com/pin/1100989440179124908/"
     },
     {
-      "title": "Melatonin Sleep Gummies Changed My Energy and Stay Asleep\n; Opens a new tab",
-      "impressions": "6",
-      "url": "https://www.pinterest.com/pin/1100989440179067079/"
-    },
-    {
-      "title": "Apple Cider Vinegar Gummies \u2014 Expectations vs Reality\n; Opens a new tab",
-      "impressions": "6",
-      "url": "https://www.pinterest.com/pin/1100989440178911219/"
-    },
-    {
-      "title": "Ashwagandha Root \u2014 What I Noticed First\n; Opens a new tab",
-      "impressions": "5",
-      "url": "https://www.pinterest.com/pin/1100989440179066791/"
-    },
-    {
-      "title": "Turmeric Curcumin and Anti-Inflammatory: My Experience\n; Opens a new tab",
-      "impressions": "5",
-      "url": "https://www.pinterest.com/pin/1100989440179068092/"
-    },
-    {
-      "title": "Wake Refreshed Win of the Week: Melatonin Sleep Gummies\n; Opens a new tab",
-      "impressions": "5",
-      "url": "https://www.pinterest.com/pin/1100989440179066818/"
+      "title": "Get Natural Energy Naturally With Green Superfood Powder\n; Opens a new tab",
+      "impressions": "7",
+      "url": "https://www.pinterest.com/pin/1100989440179258813/"
     }
   ],
-  "raw_summary": "Impressions\n,\n241\n,\nEngagements\n,\n7\n,\nOutbound clicks\n,\n0\n,\nSaves\n,\n1\n,\nTotal audience\n,\n70\n,\nEngaged audience\n,\n3\n,"
+  "raw_summary": "Impressions\n,\n365\n,\nEngagements\n,\n9\n,\nOutbound clicks\n,\n0\n,\nSaves\n,\n1\n,\nTotal audience\n,\n70\n,\nEngaged audience\n,\n3\n,"
 }
