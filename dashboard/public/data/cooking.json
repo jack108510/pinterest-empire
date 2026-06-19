@@ -2,17 +2,17 @@
   "account_id": "cooking",
   "account_name": "Cooking Account",
   "handle": "Q",
-  "fetched_at": "2026-06-18T08:04:30.010673",
+  "fetched_at": "2026-06-19T08:05:08.348534",
   "date_range": "last_30_days",
   "metrics": {
     "impressions": {
-      "value": 116330.0,
-      "display": "116.33k",
+      "value": 119580.0,
+      "display": "119.58k",
       "change_pct": 0
     },
     "engagements": {
-      "value": 4350.0,
-      "display": "4.35k",
+      "value": 4440.0,
+      "display": "4.44k",
       "change_pct": 0
     },
     "outbound_clicks": {
@@ -21,8 +21,8 @@
       "change_pct": 0
     },
     "saves": {
-      "value": 936.0,
-      "display": "936",
+      "value": 953.0,
+      "display": "953",
       "change_pct": 0
     },
     "total_audience": {
@@ -39,22 +39,22 @@
   "top_pins": [
     {
       "title": "Restaurant-quality dinner for under $10 \ud83d\udcb0\n; Opens a new tab",
-      "impressions": "46,532",
+      "impressions": "49,634",
       "url": "https://www.pinterest.com/pin/1110911433108143218/"
     },
     {
       "title": "The sauce that goes with literally everything \ud83e\uded5\n; Opens a new tab",
-      "impressions": "9,985",
+      "impressions": "9,998",
       "url": "https://www.pinterest.com/pin/1110911433108232371/"
     },
     {
       "title": "Healthy swaps that actually taste good \ud83e\udd51\n; Opens a new tab",
-      "impressions": "8,180",
+      "impressions": "8,181",
       "url": "https://www.pinterest.com/pin/1110911433108235153/"
     },
     {
       "title": "The one pan trick that saves hours of cleanup \u2728\n; Opens a new tab",
-      "impressions": "5,468",
+      "impressions": "5,470",
       "url": "https://www.pinterest.com/pin/1110911433108496191/"
     },
     {
@@ -64,7 +64,7 @@
     },
     {
       "title": "I tried the viral recipe and here's what happened \ud83e\udd2f\n; Opens a new tab",
-      "impressions": "4,062",
+      "impressions": "4,065",
       "url": "https://www.pinterest.com/pin/1110911433109054431/"
     },
     {
@@ -79,7 +79,7 @@
     },
     {
       "title": "This 5-ingredient dinner changed my life \ud83c\udf73\n; Opens a new tab",
-      "impressions": "2,946",
+      "impressions": "2,952",
       "url": "https://www.pinterest.com/pin/1110911433109121098/"
     },
     {
@@ -113,5 +113,5 @@
       "url": "https://www.pinterest.com/pin/1110911433108232345/"
     }
   ],
-  "raw_summary": "Impressions\n,\n116.33k\n,\nEngagements\n,\n4.35k\n,\nOutbound clicks\n,\n38\n,\nSaves\n,\n936\n,\nTotal audience\n,\n93.42k\n,\nEngaged audience\n,\n3.43k\n,"
+  "raw_summary": "Impressions\n,\n119.58k\n,\nEngagements\n,\n4.44k\n,\nOutbound clicks\n,\n38\n,\nSaves\n,\n953\n,\nTotal audience\n,\n93.42k\n,\nEngaged audience\n,\n3.43k\n,"
 }
