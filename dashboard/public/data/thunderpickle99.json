@@ -1,0 +1,41 @@
+{
+  "account_id": "thunderpickle99",
+  "account_name": "Pinterest Account thunderpickle99",
+  "handle": "W",
+  "fetched_at": "2026-06-20T08:02:14.861759",
+  "date_range": "last_30_days",
+  "metrics": {
+    "impressions": {
+      "value": 0,
+      "display": "-",
+      "change_pct": 0
+    },
+    "engagements": {
+      "value": 0,
+      "display": "-",
+      "change_pct": 0
+    },
+    "outbound_clicks": {
+      "value": 0,
+      "display": "-",
+      "change_pct": 0
+    },
+    "saves": {
+      "value": 0,
+      "display": "-",
+      "change_pct": 0
+    },
+    "total_audience": {
+      "value": 0,
+      "display": "-",
+      "change_pct": 0
+    },
+    "engaged_audience": {
+      "value": 0,
+      "display": "-",
+      "change_pct": 0
+    }
+  },
+  "top_pins": [],
+  "raw_summary": "Impressions\n,\n-\n,\nEngagements\n,\n-\n,\nOutbound clicks\n,\n-\n,\nSaves\n,\n-\n,\nTotal audience\n,\n-\n,\nEngaged audience\n,\n-\n,"
+}
