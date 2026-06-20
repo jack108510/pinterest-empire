@@ -2,17 +2,17 @@
   "account_id": "beauty",
   "account_name": "Beauty Account",
   "handle": "B",
-  "fetched_at": "2026-06-19T08:05:23.504645",
+  "fetched_at": "2026-06-20T08:01:23.136628",
   "date_range": "last_30_days",
   "metrics": {
     "impressions": {
-      "value": 365.0,
-      "display": "365",
+      "value": 541.0,
+      "display": "541",
       "change_pct": 0
     },
     "engagements": {
-      "value": 9.0,
-      "display": "9",
+      "value": 14.0,
+      "display": "14",
       "change_pct": 0
     },
     "outbound_clicks": {
@@ -21,31 +21,56 @@
       "change_pct": 0
     },
     "saves": {
-      "value": 1.0,
-      "display": "1",
+      "value": 2.0,
+      "display": "2",
       "change_pct": 0
     },
     "total_audience": {
-      "value": 70.0,
-      "display": "70",
+      "value": 186.0,
+      "display": "186",
       "change_pct": 0
     },
     "engaged_audience": {
-      "value": 3.0,
-      "display": "3",
+      "value": 8.0,
+      "display": "8",
       "change_pct": 0
     }
   },
   "top_pins": [
+    {
+      "title": "Biotin Hair Growth \u2014 Daily Dose of Stronger Nails\n; Opens a new tab",
+      "impressions": "22",
+      "url": "https://www.pinterest.com/pin/1100989440179260829/"
+    },
+    {
+      "title": "Stronger Nails Achievement Unlocked: Biotin Hair Growth\n; Opens a new tab",
+      "impressions": "20",
+      "url": "https://www.pinterest.com/pin/1100989440179267983/"
+    },
+    {
+      "title": "Get Natural Energy Naturally With Green Superfood Powder\n; Opens a new tab",
+      "impressions": "17",
+      "url": "https://www.pinterest.com/pin/1100989440179258813/"
+    },
+    {
+      "title": "You Need Ashwagandha Root in Your Life\n; Opens a new tab",
+      "impressions": "17",
+      "url": "https://www.pinterest.com/pin/1100989440178632799/"
+    },
     {
       "title": "The Best Decision I Made for Antioxidant: Elderberry Immune Gummies\n; Opens a new tab",
       "impressions": "17",
       "url": "https://www.pinterest.com/pin/1100989440179191754/"
     },
     {
-      "title": "Biotin Hair Growth \u2014 Daily Dose of Stronger Nails\n; Opens a new tab",
-      "impressions": "14",
-      "url": "https://www.pinterest.com/pin/1100989440179260829/"
+      "title": "Ashwagandha Root \u2014 I Should Have Started Sooner\n; Opens a new tab",
+      "impressions": "16",
+      "url": "https://www.pinterest.com/pin/1100989440179258769/"
+    },
+    {
+      "title": "Melatonin Sleep Gummies: The Only Supplement You Need\n; Opens a new tab",
+      "impressions": "15",
+      "url": "https://www.pinterest.com/pin/1100989440179329681/"
     },
     {
       "title": "Turmeric Curcumin \u2014 The Upgrade I Needed\n; Opens a new tab",
@@ -53,65 +78,40 @@
       "url": "https://www.pinterest.com/pin/1100989440179066886/"
     },
     {
+      "title": "The Supplement My Naturopath Recommended: Multivitamin Gummies\n; Opens a new tab",
+      "impressions": "13",
+      "url": "https://www.pinterest.com/pin/1100989440179259686/"
+    },
+    {
+      "title": "Vitamin D3 + K2: My #1 Wellness Pick\n; Opens a new tab",
+      "impressions": "12",
+      "url": "https://www.pinterest.com/pin/1100989440179066645/"
+    },
+    {
       "title": "Apple Cider Vinegar Gummies Made a Huge Difference\n; Opens a new tab",
       "impressions": "12",
       "url": "https://www.pinterest.com/pin/1100989440179066917/"
     },
     {
-      "title": "Ashwagandha Root \u2014 I Should Have Started Sooner\n; Opens a new tab",
+      "title": "Adaptogen Blend Is the Missing Link\n; Opens a new tab",
       "impressions": "11",
-      "url": "https://www.pinterest.com/pin/1100989440179258769/"
-    },
-    {
-      "title": "Vitamin D3 + K2: My #1 Wellness Pick\n; Opens a new tab",
-      "impressions": "11",
-      "url": "https://www.pinterest.com/pin/1100989440179066645/"
-    },
-    {
-      "title": "Stronger Nails Achievement Unlocked: Biotin Hair Growth\n; Opens a new tab",
-      "impressions": "10",
-      "url": "https://www.pinterest.com/pin/1100989440179267983/"
+      "url": "https://www.pinterest.com/pin/1100989440179286581/"
     },
     {
       "title": "I Bought Elderberry Immune Gummies So You Don't Have To\n; Opens a new tab",
-      "impressions": "9",
+      "impressions": "11",
       "url": "https://www.pinterest.com/pin/1100989440178702591/"
     },
     {
       "title": "Hair Oil: Worth the Hype?\n; Opens a new tab",
-      "impressions": "8",
+      "impressions": "10",
       "url": "https://www.pinterest.com/pin/1100989440178610001/"
     },
     {
-      "title": "Pre-Workout Energy \u2014 90 Day Transformation\n; Opens a new tab",
-      "impressions": "8",
-      "url": "https://www.pinterest.com/pin/1100989440178981712/"
-    },
-    {
-      "title": "Apple Cider Vinegar Gummies \u2014 The Supplement I Recommend Most\n; Opens a new tab",
-      "impressions": "8",
-      "url": "https://www.pinterest.com/pin/1100989440179125210/"
-    },
-    {
-      "title": "The #1 Supplement for Stronger Bones\n; Opens a new tab",
-      "impressions": "7",
-      "url": "https://www.pinterest.com/pin/1100989440179066774/"
-    },
-    {
-      "title": "Green Superfood Powder \u2014 The Foundation of Alkalize Your Body\n; Opens a new tab",
-      "impressions": "7",
-      "url": "https://www.pinterest.com/pin/1100989440178911022/"
-    },
-    {
-      "title": "Pre-Workout Energy \u2014 Can't Believe I Waited This Long\n; Opens a new tab",
-      "impressions": "7",
-      "url": "https://www.pinterest.com/pin/1100989440179124908/"
-    },
-    {
-      "title": "Get Natural Energy Naturally With Green Superfood Powder\n; Opens a new tab",
-      "impressions": "7",
-      "url": "https://www.pinterest.com/pin/1100989440179258813/"
+      "title": "The Nutrient Dense Fix Was Green Superfood Powder All Along\n; Opens a new tab",
+      "impressions": "10",
+      "url": "https://www.pinterest.com/pin/1100989440179258846/"
     }
   ],
-  "raw_summary": "Impressions\n,\n365\n,\nEngagements\n,\n9\n,\nOutbound clicks\n,\n0\n,\nSaves\n,\n1\n,\nTotal audience\n,\n70\n,\nEngaged audience\n,\n3\n,"
+  "raw_summary": "Impressions\n,\n541\n,\nEngagements\n,\n14\n,\nOutbound clicks\n,\n0\n,\nSaves\n,\n2\n,\nTotal audience\n,\n186\n,\nEngaged audience\n,\n8\n,"
 }
