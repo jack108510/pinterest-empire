@@ -2,116 +2,116 @@
   "account_id": "supplements",
   "account_name": "Supplements Account",
   "handle": "Sadie \ud83e\udd89",
-  "fetched_at": "2026-06-22T08:46:37.809452",
+  "fetched_at": "2026-06-23T08:02:55.073335",
   "date_range": "last_30_days",
   "metrics": {
     "impressions": {
-      "value": 231990.0,
-      "display": "231.99k",
-      "change_pct": 911.0
+      "value": 248360.0,
+      "display": "248.36k",
+      "change_pct": 657.0
     },
     "engagements": {
-      "value": 10360.0,
-      "display": "10.36k",
-      "change_pct": 1213.0
+      "value": 11130.0,
+      "display": "11.13k",
+      "change_pct": 848.0
     },
     "outbound_clicks": {
-      "value": 47.0,
-      "display": "47",
-      "change_pct": 1466.0
+      "value": 50.0,
+      "display": "50",
+      "change_pct": 1150.0
     },
     "saves": {
-      "value": 1550.0,
-      "display": "1.55k",
-      "change_pct": 672.0
+      "value": 1630.0,
+      "display": "1.63k",
+      "change_pct": 451.0
     },
     "total_audience": {
-      "value": 191570.0,
-      "display": "191.57k",
-      "change_pct": 1072.0
+      "value": 192720.0,
+      "display": "192.72k",
+      "change_pct": 673.0
     },
     "engaged_audience": {
-      "value": 8960.0,
-      "display": "8.96k",
-      "change_pct": 1383.0
+      "value": 9010.0,
+      "display": "9.01k",
+      "change_pct": 877.0
     }
   },
   "top_pins": [
     {
       "title": "The #1 Supplement Everyone Needs\n; Opens a new tab",
-      "impressions": "15,356",
+      "impressions": "16,177",
       "url": "https://www.pinterest.com/pin/1143844005378172363/"
     },
     {
       "title": "I Tried Turmeric Curcumin for 60 Days\n; Opens a new tab",
-      "impressions": "11,087",
+      "impressions": "11,345",
       "url": "https://www.pinterest.com/pin/1143844005378107375/"
     },
     {
-      "title": "Melatonin Sleep Gummies Changed Everything\n; Opens a new tab",
-      "impressions": "9,591",
-      "url": "https://www.pinterest.com/pin/1143844005377696375/"
-    },
-    {
-      "title": "Appetite Control Starts Here\n; Opens a new tab",
-      "impressions": "9,073",
-      "url": "https://www.pinterest.com/pin/1143844005377718968/"
-    },
-    {
       "title": "Real Results With Vitamin D3 + K2\n; Opens a new tab",
-      "impressions": "7,897",
+      "impressions": "9,891",
       "url": "https://www.pinterest.com/pin/1143844005377909994/"
     },
     {
-      "title": "3 Supplements That Actually Work\n; Opens a new tab",
-      "impressions": "7,261",
-      "url": "https://www.pinterest.com/pin/1143844005377718035/"
+      "title": "Appetite Control Starts Here\n; Opens a new tab",
+      "impressions": "9,068",
+      "url": "https://www.pinterest.com/pin/1143844005377718968/"
     },
     {
-      "title": "Game Changer for Detox\n; Opens a new tab",
-      "impressions": "7,055",
-      "url": "https://www.pinterest.com/pin/1143844005377909025/"
-    },
-    {
-      "title": "Joint Support Starts Here\n; Opens a new tab",
-      "impressions": "6,145",
-      "url": "https://www.pinterest.com/pin/1143844005378172773/"
-    },
-    {
-      "title": "Alkalize Your Body Starts Here\n; Opens a new tab",
-      "impressions": "6,095",
-      "url": "https://www.pinterest.com/pin/1143844005378370810/"
-    },
-    {
-      "title": "Stop Wasting Money on the Wrong Supplements\n; Opens a new tab",
-      "impressions": "6,028",
-      "url": "https://www.pinterest.com/pin/1143844005378172694/"
+      "title": "Melatonin Sleep Gummies Changed Everything\n; Opens a new tab",
+      "impressions": "9,025",
+      "url": "https://www.pinterest.com/pin/1143844005377696375/"
     },
     {
       "title": "My Secret to Stay Asleep\n; Opens a new tab",
-      "impressions": "5,924",
+      "impressions": "8,325",
       "url": "https://www.pinterest.com/pin/1143844005377718955/"
     },
     {
-      "title": "Best Supplement I've Ever Tried\n; Opens a new tab",
-      "impressions": "5,807",
-      "url": "https://www.pinterest.com/pin/1143844005378234189/"
-    },
-    {
-      "title": "My Daily Wellness Staple\n; Opens a new tab",
-      "impressions": "5,323",
-      "url": "https://www.pinterest.com/pin/1143844005378171870/"
+      "title": "Game Changer for Detox\n; Opens a new tab",
+      "impressions": "7,548",
+      "url": "https://www.pinterest.com/pin/1143844005377909025/"
     },
     {
       "title": "Stop Wasting Money on the Wrong Supplements\n; Opens a new tab",
-      "impressions": "5,155",
-      "url": "https://www.pinterest.com/pin/1143844005377698474/"
+      "impressions": "7,339",
+      "url": "https://www.pinterest.com/pin/1143844005378172694/"
     },
     {
-      "title": "Top Supplement Pick for 2026\n; Opens a new tab",
-      "impressions": "4,793",
-      "url": "https://www.pinterest.com/pin/1143844005377843458/"
+      "title": "Best Supplement I've Ever Tried\n; Opens a new tab",
+      "impressions": "6,434",
+      "url": "https://www.pinterest.com/pin/1143844005378234189/"
+    },
+    {
+      "title": "3 Supplements That Actually Work\n; Opens a new tab",
+      "impressions": "6,341",
+      "url": "https://www.pinterest.com/pin/1143844005377718035/"
+    },
+    {
+      "title": "Joint Support Starts Here\n; Opens a new tab",
+      "impressions": "6,146",
+      "url": "https://www.pinterest.com/pin/1143844005378172773/"
+    },
+    {
+      "title": "Stop Wasting Money on the Wrong Supplements\n; Opens a new tab",
+      "impressions": "6,111",
+      "url": "https://www.pinterest.com/pin/1143844005378171585/"
+    },
+    {
+      "title": "Vitamin D3 + K2: Worth the Hype?\n; Opens a new tab",
+      "impressions": "5,775",
+      "url": "https://www.pinterest.com/pin/1143844005378302510/"
+    },
+    {
+      "title": "Alkalize Your Body Starts Here\n; Opens a new tab",
+      "impressions": "5,638",
+      "url": "https://www.pinterest.com/pin/1143844005378370810/"
+    },
+    {
+      "title": "My Daily Wellness Staple\n; Opens a new tab",
+      "impressions": "5,324",
+      "url": "https://www.pinterest.com/pin/1143844005378171870/"
     }
   ],
-  "raw_summary": "Impressions\n,\n231.99k\n,\n911%\nEngagements\n,\n10.36k\n,\n1213%\nOutbound clicks\n,\n47\n,\n1466%\nSaves\n,\n1.55k\n,\n672%\nTotal audience\n,\n191.57k\n,\n1072%\nEngaged audience\n,\n8.96k\n,\n1383%"
+  "raw_summary": "Impressions\n,\n248.36k\n,\n657%\nEngagements\n,\n11.13k\n,\n848%\nOutbound clicks\n,\n50\n,\n1150%\nSaves\n,\n1.63k\n,\n451%\nTotal audience\n,\n192.72k\n,\n673%\nEngaged audience\n,\n9.01k\n,\n877%"
 }
