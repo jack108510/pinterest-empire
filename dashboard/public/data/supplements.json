@@ -2,94 +2,94 @@
   "account_id": "supplements",
   "account_name": "Supplements Account",
   "handle": "Sadie \ud83e\udd89",
-  "fetched_at": "2026-06-25T08:03:14.898517",
+  "fetched_at": "2026-06-26T08:01:56.185558",
   "date_range": "last_30_days",
   "metrics": {
     "impressions": {
-      "value": 261660.00000000003,
-      "display": "261.66k",
-      "change_pct": 568.0
+      "value": 263600.0,
+      "display": "263.6k",
+      "change_pct": 513.0
     },
     "engagements": {
-      "value": 11650.0,
-      "display": "11.65k",
-      "change_pct": 697.0
+      "value": 11750.0,
+      "display": "11.75k",
+      "change_pct": 625.0
     },
     "outbound_clicks": {
-      "value": 52.0,
-      "display": "52",
-      "change_pct": 919.0
+      "value": 53.0,
+      "display": "53",
+      "change_pct": 750.0
     },
     "saves": {
-      "value": 1680.0,
-      "display": "1.68k",
-      "change_pct": 390.0
+      "value": 1690.0,
+      "display": "1.69k",
+      "change_pct": 346.0
     },
     "total_audience": {
-      "value": 203640.0,
-      "display": "203.64k",
-      "change_pct": 564.0
+      "value": 200300.0,
+      "display": "200.3k",
+      "change_pct": 484.0
     },
     "engaged_audience": {
-      "value": 9680.0,
-      "display": "9.68k",
-      "change_pct": 728.0
+      "value": 9560.0,
+      "display": "9.56k",
+      "change_pct": 628.0
     }
   },
   "top_pins": [
     {
       "title": "The #1 Supplement Everyone Needs\n; Opens a new tab",
-      "impressions": "17,383",
+      "impressions": "17,606",
       "url": "https://www.pinterest.com/pin/1143844005378172363/"
     },
     {
       "title": "Real Results With Vitamin D3 + K2\n; Opens a new tab",
-      "impressions": "11,654",
+      "impressions": "12,484",
       "url": "https://www.pinterest.com/pin/1143844005377909994/"
     },
     {
       "title": "I Tried Turmeric Curcumin for 60 Days\n; Opens a new tab",
-      "impressions": "10,929",
+      "impressions": "10,406",
       "url": "https://www.pinterest.com/pin/1143844005378107375/"
     },
     {
       "title": "My Secret to Stay Asleep\n; Opens a new tab",
-      "impressions": "9,580",
+      "impressions": "9,587",
       "url": "https://www.pinterest.com/pin/1143844005377718955/"
     },
     {
       "title": "Appetite Control Starts Here\n; Opens a new tab",
-      "impressions": "9,072",
+      "impressions": "9,071",
       "url": "https://www.pinterest.com/pin/1143844005377718968/"
     },
     {
       "title": "Melatonin Sleep Gummies Changed Everything\n; Opens a new tab",
-      "impressions": "9,027",
+      "impressions": "9,026",
       "url": "https://www.pinterest.com/pin/1143844005377696375/"
     },
     {
       "title": "Game Changer for Detox\n; Opens a new tab",
-      "impressions": "8,211",
+      "impressions": "8,464",
       "url": "https://www.pinterest.com/pin/1143844005377909025/"
     },
     {
       "title": "Stop Wasting Money on the Wrong Supplements\n; Opens a new tab",
-      "impressions": "8,174",
+      "impressions": "8,184",
       "url": "https://www.pinterest.com/pin/1143844005378172694/"
     },
     {
       "title": "Stop Wasting Money on the Wrong Supplements\n; Opens a new tab",
-      "impressions": "7,336",
+      "impressions": "7,341",
       "url": "https://www.pinterest.com/pin/1143844005378171585/"
     },
     {
       "title": "Best Supplement I've Ever Tried\n; Opens a new tab",
-      "impressions": "6,722",
+      "impressions": "6,706",
       "url": "https://www.pinterest.com/pin/1143844005378234189/"
     },
     {
       "title": "Vitamin D3 + K2: Worth the Hype?\n; Opens a new tab",
-      "impressions": "6,184",
+      "impressions": "6,188",
       "url": "https://www.pinterest.com/pin/1143844005378302510/"
     },
     {
@@ -99,19 +99,19 @@
     },
     {
       "title": "3 Supplements That Actually Work\n; Opens a new tab",
-      "impressions": "6,111",
+      "impressions": "6,042",
       "url": "https://www.pinterest.com/pin/1143844005377718035/"
-    },
-    {
-      "title": "Alkalize Your Body Starts Here\n; Opens a new tab",
-      "impressions": "5,415",
-      "url": "https://www.pinterest.com/pin/1143844005378370810/"
     },
     {
       "title": "My Daily Wellness Staple\n; Opens a new tab",
       "impressions": "5,329",
       "url": "https://www.pinterest.com/pin/1143844005378171870/"
+    },
+    {
+      "title": "5 Signs You Need Adaptogen Blend\n; Opens a new tab",
+      "impressions": "5,296",
+      "url": "https://www.pinterest.com/pin/1143844005377718192/"
     }
   ],
-  "raw_summary": "Impressions\n,\n261.66k\n,\n568%\nEngagements\n,\n11.65k\n,\n697%\nOutbound clicks\n,\n52\n,\n919%\nSaves\n,\n1.68k\n,\n390%\nTotal audience\n,\n203.64k\n,\n564%\nEngaged audience\n,\n9.68k\n,\n728%"
+  "raw_summary": "Impressions\n,\n263.6k\n,\n513%\nEngagements\n,\n11.75k\n,\n625%\nOutbound clicks\n,\n53\n,\n750%\nSaves\n,\n1.69k\n,\n346%\nTotal audience\n,\n200.3k\n,\n484%\nEngaged audience\n,\n9.56k\n,\n628%"
 }
