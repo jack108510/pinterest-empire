@@ -2,44 +2,44 @@
   "account_id": "cooking",
   "account_name": "Cooking Account",
   "handle": "Q",
-  "fetched_at": "2026-06-27T08:03:08.636712",
+  "fetched_at": "2026-06-28T08:39:42.291090",
   "date_range": "last_30_days",
   "metrics": {
     "impressions": {
-      "value": 146640.0,
-      "display": "146.64k",
+      "value": 145320.0,
+      "display": "145.32k",
       "change_pct": 0
     },
     "engagements": {
-      "value": 5410.0,
-      "display": "5.41k",
+      "value": 5340.0,
+      "display": "5.34k",
       "change_pct": 0
     },
     "outbound_clicks": {
-      "value": 42.0,
-      "display": "42",
+      "value": 40.0,
+      "display": "40",
       "change_pct": 0
     },
     "saves": {
-      "value": 1110.0,
-      "display": "1.11k",
+      "value": 1080.0,
+      "display": "1.08k",
       "change_pct": 0
     },
     "total_audience": {
-      "value": 130180.0,
-      "display": "130.18k",
+      "value": 129220.0,
+      "display": "129.22k",
       "change_pct": 0
     },
     "engaged_audience": {
-      "value": 4610.0,
-      "display": "4.61k",
+      "value": 4580.0,
+      "display": "4.58k",
       "change_pct": 0
     }
   },
   "top_pins": [
     {
       "title": "Restaurant-quality dinner for under $10 \ud83d\udcb0\n; Opens a new tab",
-      "impressions": "74,027",
+      "impressions": "74,037",
       "url": "https://www.pinterest.com/pin/1110911433108143218/"
     },
     {
@@ -49,52 +49,52 @@
     },
     {
       "title": "Healthy swaps that actually taste good \ud83e\udd51\n; Opens a new tab",
-      "impressions": "8,206",
+      "impressions": "8,208",
       "url": "https://www.pinterest.com/pin/1110911433108235153/"
     },
     {
       "title": "Restaurant-quality dinner for under $10 \ud83d\udcb0\n; Opens a new tab",
-      "impressions": "4,850",
+      "impressions": "4,854",
       "url": "https://www.pinterest.com/pin/1110911433108258205/"
     },
     {
-      "title": "The one pan trick that saves hours of cleanup \u2728\n; Opens a new tab",
-      "impressions": "4,549",
-      "url": "https://www.pinterest.com/pin/1110911433108496191/"
-    },
-    {
       "title": "I tried the viral recipe and here's what happened \ud83e\udd2f\n; Opens a new tab",
-      "impressions": "4,166",
+      "impressions": "4,322",
       "url": "https://www.pinterest.com/pin/1110911433108258151/"
     },
     {
       "title": "I tried the viral recipe and here's what happened \ud83e\udd2f\n; Opens a new tab",
-      "impressions": "4,146",
+      "impressions": "4,152",
       "url": "https://www.pinterest.com/pin/1110911433109054431/"
     },
     {
       "title": "My grandmother's recipe gone viral \ud83d\udc75\n; Opens a new tab",
-      "impressions": "3,577",
+      "impressions": "3,578",
       "url": "https://www.pinterest.com/pin/1110911433108233377/"
     },
     {
+      "title": "The one pan trick that saves hours of cleanup \u2728\n; Opens a new tab",
+      "impressions": "3,569",
+      "url": "https://www.pinterest.com/pin/1110911433108496191/"
+    },
+    {
       "title": "I tried the viral recipe and here's what happened \ud83e\udd2f\n; Opens a new tab",
-      "impressions": "3,333",
+      "impressions": "3,026",
       "url": "https://www.pinterest.com/pin/1110911433108432523/"
     },
     {
       "title": "This 5-ingredient dinner changed my life \ud83c\udf73\n; Opens a new tab",
-      "impressions": "2,966",
+      "impressions": "2,969",
       "url": "https://www.pinterest.com/pin/1110911433109121098/"
     },
     {
       "title": "My grandmother's recipe gone viral \ud83d\udc75\n; Opens a new tab",
-      "impressions": "2,917",
+      "impressions": "2,920",
       "url": "https://www.pinterest.com/pin/1110911433108241389/"
     },
     {
       "title": "Healthy swaps that actually taste good \ud83e\udd51\n; Opens a new tab",
-      "impressions": "2,087",
+      "impressions": "2,088",
       "url": "https://www.pinterest.com/pin/1110911433108234645/"
     },
     {
@@ -104,7 +104,7 @@
     },
     {
       "title": "My grandmother's recipe gone viral \ud83d\udc75\n; Opens a new tab",
-      "impressions": "1,547",
+      "impressions": "1,631",
       "url": "https://www.pinterest.com/pin/1110911433108172261/"
     },
     {
@@ -113,5 +113,5 @@
       "url": "https://www.pinterest.com/pin/1110911433108232248/"
     }
   ],
-  "raw_summary": "Impressions\n,\n146.64k\n,\nEngagements\n,\n5.41k\n,\nOutbound clicks\n,\n42\n,\nSaves\n,\n1.11k\n,\nTotal audience\n,\n130.18k\n,\nEngaged audience\n,\n4.61k\n,"
+  "raw_summary": "Impressions\n,\n145.32k\n,\nEngagements\n,\n5.34k\n,\nOutbound clicks\n,\n40\n,\nSaves\n,\n1.08k\n,\nTotal audience\n,\n129.22k\n,\nEngaged audience\n,\n4.58k\n,"
 }
