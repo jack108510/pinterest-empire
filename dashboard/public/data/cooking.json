@@ -2,44 +2,44 @@
   "account_id": "cooking",
   "account_name": "Cooking Account",
   "handle": "Q",
-  "fetched_at": "2026-06-28T08:39:42.291090",
+  "fetched_at": "2026-06-30T08:05:28.185164",
   "date_range": "last_30_days",
   "metrics": {
     "impressions": {
-      "value": 145320.0,
-      "display": "145.32k",
+      "value": 129860.00000000001,
+      "display": "129.86k",
       "change_pct": 0
     },
     "engagements": {
-      "value": 5340.0,
-      "display": "5.34k",
+      "value": 4800.0,
+      "display": "4.8k",
       "change_pct": 0
     },
     "outbound_clicks": {
-      "value": 40.0,
-      "display": "40",
+      "value": 35.0,
+      "display": "35",
       "change_pct": 0
     },
     "saves": {
-      "value": 1080.0,
-      "display": "1.08k",
+      "value": 967.0,
+      "display": "967",
       "change_pct": 0
     },
     "total_audience": {
-      "value": 129220.0,
-      "display": "129.22k",
+      "value": 114960.0,
+      "display": "114.96k",
       "change_pct": 0
     },
     "engaged_audience": {
-      "value": 4580.0,
-      "display": "4.58k",
+      "value": 4100.0,
+      "display": "4.1k",
       "change_pct": 0
     }
   },
   "top_pins": [
     {
       "title": "Restaurant-quality dinner for under $10 \ud83d\udcb0\n; Opens a new tab",
-      "impressions": "74,037",
+      "impressions": "59,777",
       "url": "https://www.pinterest.com/pin/1110911433108143218/"
     },
     {
@@ -49,7 +49,7 @@
     },
     {
       "title": "Healthy swaps that actually taste good \ud83e\udd51\n; Opens a new tab",
-      "impressions": "8,208",
+      "impressions": "8,209",
       "url": "https://www.pinterest.com/pin/1110911433108235153/"
     },
     {
@@ -59,32 +59,27 @@
     },
     {
       "title": "I tried the viral recipe and here's what happened \ud83e\udd2f\n; Opens a new tab",
-      "impressions": "4,322",
+      "impressions": "4,332",
       "url": "https://www.pinterest.com/pin/1110911433108258151/"
     },
     {
       "title": "I tried the viral recipe and here's what happened \ud83e\udd2f\n; Opens a new tab",
-      "impressions": "4,152",
+      "impressions": "4,178",
       "url": "https://www.pinterest.com/pin/1110911433109054431/"
     },
     {
       "title": "My grandmother's recipe gone viral \ud83d\udc75\n; Opens a new tab",
-      "impressions": "3,578",
+      "impressions": "3,586",
       "url": "https://www.pinterest.com/pin/1110911433108233377/"
     },
     {
       "title": "The one pan trick that saves hours of cleanup \u2728\n; Opens a new tab",
-      "impressions": "3,569",
+      "impressions": "3,283",
       "url": "https://www.pinterest.com/pin/1110911433108496191/"
     },
     {
-      "title": "I tried the viral recipe and here's what happened \ud83e\udd2f\n; Opens a new tab",
-      "impressions": "3,026",
-      "url": "https://www.pinterest.com/pin/1110911433108432523/"
-    },
-    {
       "title": "This 5-ingredient dinner changed my life \ud83c\udf73\n; Opens a new tab",
-      "impressions": "2,969",
+      "impressions": "2,966",
       "url": "https://www.pinterest.com/pin/1110911433109121098/"
     },
     {
@@ -94,8 +89,13 @@
     },
     {
       "title": "Healthy swaps that actually taste good \ud83e\udd51\n; Opens a new tab",
-      "impressions": "2,088",
+      "impressions": "2,094",
       "url": "https://www.pinterest.com/pin/1110911433108234645/"
+    },
+    {
+      "title": "I tried the viral recipe and here's what happened \ud83e\udd2f\n; Opens a new tab",
+      "impressions": "1,980",
+      "url": "https://www.pinterest.com/pin/1110911433108432523/"
     },
     {
       "title": "The air fryer recipe everyone's obsessed with \ud83d\udd25\n; Opens a new tab",
@@ -104,7 +104,7 @@
     },
     {
       "title": "My grandmother's recipe gone viral \ud83d\udc75\n; Opens a new tab",
-      "impressions": "1,631",
+      "impressions": "1,639",
       "url": "https://www.pinterest.com/pin/1110911433108172261/"
     },
     {
@@ -113,5 +113,5 @@
       "url": "https://www.pinterest.com/pin/1110911433108232248/"
     }
   ],
-  "raw_summary": "Impressions\n,\n145.32k\n,\nEngagements\n,\n5.34k\n,\nOutbound clicks\n,\n40\n,\nSaves\n,\n1.08k\n,\nTotal audience\n,\n129.22k\n,\nEngaged audience\n,\n4.58k\n,"
+  "raw_summary": "Impressions\n,\n129.86k\n,\nEngagements\n,\n4.8k\n,\nOutbound clicks\n,\n35\n,\nSaves\n,\n967\n,\nTotal audience\n,\n114.96k\n,\nEngaged audience\n,\n4.1k\n,"
 }
