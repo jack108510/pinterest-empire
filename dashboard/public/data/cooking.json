@@ -2,69 +2,69 @@
   "account_id": "cooking",
   "account_name": "Cooking Account",
   "handle": "Q",
-  "fetched_at": "2026-07-01T08:01:58.363976",
+  "fetched_at": "2026-07-02T08:02:26.943765",
   "date_range": "last_30_days",
   "metrics": {
     "impressions": {
-      "value": 130580.00000000001,
-      "display": "130.58k",
+      "value": 126460.0,
+      "display": "126.46k",
       "change_pct": 0
     },
     "engagements": {
-      "value": 4820.0,
-      "display": "4.82k",
+      "value": 4690.0,
+      "display": "4.69k",
       "change_pct": 0
     },
     "outbound_clicks": {
-      "value": 35.0,
-      "display": "35",
+      "value": 34.0,
+      "display": "34",
       "change_pct": 0
     },
     "saves": {
-      "value": 971.0,
-      "display": "971",
+      "value": 946.0,
+      "display": "946",
       "change_pct": 0
     },
     "total_audience": {
-      "value": 115300.0,
-      "display": "115.3k",
+      "value": 111410.0,
+      "display": "111.41k",
       "change_pct": 0
     },
     "engaged_audience": {
-      "value": 4120.0,
-      "display": "4.12k",
+      "value": 3990.0,
+      "display": "3.99k",
       "change_pct": 0
     }
   },
   "top_pins": [
     {
       "title": "Restaurant-quality dinner for under $10 \ud83d\udcb0\n; Opens a new tab",
-      "impressions": "59,790",
+      "impressions": "55,256",
       "url": "https://www.pinterest.com/pin/1110911433108143218/"
     },
     {
       "title": "The sauce that goes with literally everything \ud83e\uded5\n; Opens a new tab",
-      "impressions": "10,513",
+      "impressions": "10,514",
       "url": "https://www.pinterest.com/pin/1110911433108232371/"
     },
     {
       "title": "Healthy swaps that actually taste good \ud83e\udd51\n; Opens a new tab",
-      "impressions": "8,211",
+      "impressions": "8,215",
       "url": "https://www.pinterest.com/pin/1110911433108235153/"
     },
     {
       "title": "Restaurant-quality dinner for under $10 \ud83d\udcb0\n; Opens a new tab",
-      "impressions": "4,854",
+      "impressions": "4,855",
       "url": "https://www.pinterest.com/pin/1110911433108258205/"
     },
     {
       "title": "I tried the viral recipe and here's what happened \ud83e\udd2f\n; Opens a new tab",
-      "impressions": "4,340",
+      "impressions": "4,347",
       "url": "https://www.pinterest.com/pin/1110911433108258151/"
     },
     {
       "title": "I tried the viral recipe and here's what happened \ud83e\udd2f\n; Opens a new tab",
-      "impressions": "4,187",
+      "impressions": "4,196",
       "url": "https://www.pinterest.com/pin/1110911433109054431/"
     },
     {
@@ -74,12 +74,12 @@
     },
     {
       "title": "The one pan trick that saves hours of cleanup \u2728\n; Opens a new tab",
-      "impressions": "3,299",
+      "impressions": "3,307",
       "url": "https://www.pinterest.com/pin/1110911433108496191/"
     },
     {
       "title": "This 5-ingredient dinner changed my life \ud83c\udf73\n; Opens a new tab",
-      "impressions": "2,967",
+      "impressions": "2,963",
       "url": "https://www.pinterest.com/pin/1110911433109121098/"
     },
     {
@@ -93,19 +93,19 @@
       "url": "https://www.pinterest.com/pin/1110911433108234645/"
     },
     {
-      "title": "I tried the viral recipe and here's what happened \ud83e\udd2f\n; Opens a new tab",
-      "impressions": "1,980",
-      "url": "https://www.pinterest.com/pin/1110911433108432523/"
-    },
-    {
       "title": "The air fryer recipe everyone's obsessed with \ud83d\udd25\n; Opens a new tab",
       "impressions": "1,843",
       "url": "https://www.pinterest.com/pin/1110911433108233152/"
     },
     {
       "title": "My grandmother's recipe gone viral \ud83d\udc75\n; Opens a new tab",
-      "impressions": "1,643",
+      "impressions": "1,644",
       "url": "https://www.pinterest.com/pin/1110911433108172261/"
+    },
+    {
+      "title": "I tried the viral recipe and here's what happened \ud83e\udd2f\n; Opens a new tab",
+      "impressions": "1,622",
+      "url": "https://www.pinterest.com/pin/1110911433108432523/"
     },
     {
       "title": "This dessert has 3 ingredients and zero guilt \ud83c\udf70\n; Opens a new tab",
@@ -113,5 +113,5 @@
       "url": "https://www.pinterest.com/pin/1110911433108232248/"
     }
   ],
-  "raw_summary": "Impressions\n,\n130.58k\n,\nEngagements\n,\n4.82k\n,\nOutbound clicks\n,\n35\n,\nSaves\n,\n971\n,\nTotal audience\n,\n115.3k\n,\nEngaged audience\n,\n4.12k\n,"
+  "raw_summary": "Impressions\n,\n126.46k\n,\nEngagements\n,\n4.69k\n,\nOutbound clicks\n,\n34\n,\nSaves\n,\n946\n,\nTotal audience\n,\n111.41k\n,\nEngaged audience\n,\n3.99k\n,"
 }
