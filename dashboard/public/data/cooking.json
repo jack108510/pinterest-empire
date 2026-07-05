@@ -2,17 +2,17 @@
   "account_id": "cooking",
   "account_name": "Cooking Account",
   "handle": "Q",
-  "fetched_at": "2026-07-04T08:01:48.095472",
+  "fetched_at": "2026-07-05T08:00:58.190908",
   "date_range": "last_30_days",
   "metrics": {
     "impressions": {
-      "value": 121570.0,
-      "display": "121.57k",
+      "value": 121890.0,
+      "display": "121.89k",
       "change_pct": 0
     },
     "engagements": {
-      "value": 4460.0,
-      "display": "4.46k",
+      "value": 4490.0,
+      "display": "4.49k",
       "change_pct": 0
     },
     "outbound_clicks": {
@@ -21,25 +21,25 @@
       "change_pct": 0
     },
     "saves": {
-      "value": 880.0,
-      "display": "880",
+      "value": 884.0,
+      "display": "884",
       "change_pct": 0
     },
     "total_audience": {
-      "value": 106480.0,
-      "display": "106.48k",
+      "value": 107700.0,
+      "display": "107.7k",
       "change_pct": 0
     },
     "engaged_audience": {
-      "value": 3810.0,
-      "display": "3.81k",
+      "value": 3850.0,
+      "display": "3.85k",
       "change_pct": 0
     }
   },
   "top_pins": [
     {
       "title": "Restaurant-quality dinner for under $10 \ud83d\udcb0\n; Opens a new tab",
-      "impressions": "53,526",
+      "impressions": "53,530",
       "url": "https://www.pinterest.com/pin/1110911433108143218/"
     },
     {
@@ -49,7 +49,7 @@
     },
     {
       "title": "Healthy swaps that actually taste good \ud83e\udd51\n; Opens a new tab",
-      "impressions": "7,962",
+      "impressions": "7,963",
       "url": "https://www.pinterest.com/pin/1110911433108235153/"
     },
     {
@@ -59,22 +59,22 @@
     },
     {
       "title": "I tried the viral recipe and here's what happened \ud83e\udd2f\n; Opens a new tab",
-      "impressions": "4,365",
+      "impressions": "4,368",
       "url": "https://www.pinterest.com/pin/1110911433108258151/"
     },
     {
       "title": "I tried the viral recipe and here's what happened \ud83e\udd2f\n; Opens a new tab",
-      "impressions": "4,214",
+      "impressions": "4,215",
       "url": "https://www.pinterest.com/pin/1110911433109054431/"
     },
     {
       "title": "My grandmother's recipe gone viral \ud83d\udc75\n; Opens a new tab",
-      "impressions": "3,410",
+      "impressions": "3,411",
       "url": "https://www.pinterest.com/pin/1110911433108233377/"
     },
     {
       "title": "My grandmother's recipe gone viral \ud83d\udc75\n; Opens a new tab",
-      "impressions": "2,818",
+      "impressions": "2,819",
       "url": "https://www.pinterest.com/pin/1110911433108241389/"
     },
     {
@@ -99,7 +99,7 @@
     },
     {
       "title": "My grandmother's recipe gone viral \ud83d\udc75\n; Opens a new tab",
-      "impressions": "1,647",
+      "impressions": "1,649",
       "url": "https://www.pinterest.com/pin/1110911433108172261/"
     },
     {
@@ -113,5 +113,5 @@
       "url": "https://www.pinterest.com/pin/1110911433108232248/"
     }
   ],
-  "raw_summary": "Impressions\n,\n121.57k\n,\nEngagements\n,\n4.46k\n,\nOutbound clicks\n,\n29\n,\nSaves\n,\n880\n,\nTotal audience\n,\n106.48k\n,\nEngaged audience\n,\n3.81k\n,"
+  "raw_summary": "Impressions\n,\n121.89k\n,\nEngagements\n,\n4.49k\n,\nOutbound clicks\n,\n29\n,\nSaves\n,\n884\n,\nTotal audience\n,\n107.7k\n,\nEngaged audience\n,\n3.85k\n,"
 }
