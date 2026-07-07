@@ -1117,25 +1117,48 @@
     </svg>`;
   }
 
-  /* ---------- Fetch with fallback to local data ---------- */
+  /* ---------- Fetch with fallback to static JSON files ---------- */
   async function fetchJSON(endpoint) {
-    const res = await fetch(API + endpoint, { cache: 'no-store' });
-    if (!res.ok) throw new Error(endpoint + ' returned ' + res.status);
-    return res.json();
+    // Try API first, then fall back to static JSON files for GitHub Pages
+    try {
+      const res = await fetch(API + endpoint, { cache: 'no-store' });
+      if (res.ok) return res.json();
+    } catch {}
+    // Static fallback: map /api/* to data files
+    if (endpoint === '/api/summary') {
+      const r = await fetch('data/summary.json', { cache: 'no-store' });
+      if (r.ok) return r.json();
+    }
+    throw new Error(endpoint + ' unavailable');
+  }
+
+  async function fetchStatic(path) {
+    try {
+      const r = await fetch(path, { cache: 'no-store' });
+      if (r.ok) return r.json();
+    } catch {}
+    return null;
   }
 
   async function fetchAll() {
-    const [summary, posting, accounts] = await Promise.allSettled([
-      fetchJSON('/api/summary'),
-      fetchJSON('/api/posting-stats'),
-      fetchJSON('/api/accounts')
-    ]);
-    return {
-      summary: summary.status === 'fulfilled' ? summary.value : null,
-      posting: posting.status === 'fulfilled' ? posting.value : null,
-      accounts: accounts.status === 'fulfilled' ? accounts.value : null,
-      errors: [summary, posting, accounts].filter(r => r.status === 'rejected').map(r => r.reason)
-    };
+    // Try API endpoints first (local server), fall back to static JSON (GitHub Pages)
+    let summary = null, posting = null, accounts = null;
+    const errors = [];
+
+    try { summary = await fetchJSON('/api/summary'); }
+    catch {
+      // Static fallback
+      summary = await fetchStatic('data/summary.json');
+      if (!summary) errors.push(new Error('summary unavailable'));
+    }
+
+    try { posting = await fetchJSON('/api/posting-stats'); }
+    catch { posting = null; } // optional
+
+    try { accounts = await fetchJSON('/api/accounts'); }
+    catch { accounts = null; } // optional
+
+    return { summary, posting, accounts, errors };
   }
 
   /* ---------- Build sparkline series from change_pct (synthetic but deterministic) ---------- */
@@ -1574,7 +1597,7 @@
     try {
       const { summary, posting, accounts, errors } = await fetchAll();
       if (!summary) {
-        showError('Failed to load /api/summary. Is the dashboard server running on :3007?');
+        showError('Failed to load analytics data. Refreshing...');
         return;
       }
       if (errors.length) console.warn('Some endpoints failed:', errors);

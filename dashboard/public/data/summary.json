@@ -1,32 +1,32 @@
 {
-  "fetched_at": "2026-07-07T08:02:37.220016",
-  "total_accounts": 5,
+  "fetched_at": "2026-07-07T12:46:56.918563",
+  "total_accounts": 6,
   "accounts": [
     {
       "account_id": "supplements",
       "account_name": "Supplements Account",
       "handle": "Sadie \ud83e\udd89",
-      "fetched_at": "2026-07-07T08:01:53.655239",
+      "fetched_at": "2026-07-07T12:46:04.673307",
       "date_range": "last_30_days",
       "metrics": {
         "impressions": {
-          "value": 274230.0,
-          "display": "274.23k",
+          "value": 275220.0,
+          "display": "275.22k",
           "change_pct": 143.0
         },
         "engagements": {
-          "value": 12190.0,
-          "display": "12.19k",
+          "value": 12240.0,
+          "display": "12.24k",
           "change_pct": 154.0
         },
         "outbound_clicks": {
-          "value": 58.0,
-          "display": "58",
+          "value": 59.0,
+          "display": "59",
           "change_pct": 216.0
         },
         "saves": {
-          "value": 1840.0,
-          "display": "1.84k",
+          "value": 1850.0,
+          "display": "1.85k",
           "change_pct": 135.0
         },
         "total_audience": {
@@ -43,7 +43,7 @@
       "top_pins": [
         {
           "title": "The #1 Supplement Everyone Needs\n; Opens a new tab",
-          "impressions": "21,611",
+          "impressions": "21,754",
           "url": "https://www.pinterest.com/pin/1143844005378172363/"
         },
         {
@@ -53,12 +53,12 @@
         },
         {
           "title": "Melatonin Sleep Gummies Changed Everything\n; Opens a new tab",
-          "impressions": "13,241",
+          "impressions": "13,248",
           "url": "https://www.pinterest.com/pin/1143844005377696375/"
         },
         {
           "title": "3 Supplements That Actually Work\n; Opens a new tab",
-          "impressions": "9,758",
+          "impressions": "9,858",
           "url": "https://www.pinterest.com/pin/1143844005377718035/"
         },
         {
@@ -67,18 +67,18 @@
           "url": "https://www.pinterest.com/pin/1143844005377718955/"
         },
         {
-          "title": "Stop Wasting Money on the Wrong Supplements\n; Opens a new tab",
-          "impressions": "9,315",
-          "url": "https://www.pinterest.com/pin/1143844005378171585/"
-        },
-        {
           "title": "Game Changer for Detox\n; Opens a new tab",
-          "impressions": "9,276",
+          "impressions": "9,340",
           "url": "https://www.pinterest.com/pin/1143844005377909025/"
         },
         {
           "title": "Stop Wasting Money on the Wrong Supplements\n; Opens a new tab",
-          "impressions": "6,840",
+          "impressions": "9,321",
+          "url": "https://www.pinterest.com/pin/1143844005378171585/"
+        },
+        {
+          "title": "Stop Wasting Money on the Wrong Supplements\n; Opens a new tab",
+          "impressions": "6,841",
           "url": "https://www.pinterest.com/pin/1143844005378172694/"
         },
         {
@@ -87,18 +87,18 @@
           "url": "https://www.pinterest.com/pin/1143844005377718968/"
         },
         {
-          "title": "Doctors Recommend This For Detox\n; Opens a new tab",
-          "impressions": "6,588",
-          "url": "https://www.pinterest.com/pin/1143844005377973743/"
-        },
-        {
           "title": "Don't Buy Turmeric Curcumin Until You Read This\n; Opens a new tab",
-          "impressions": "6,511",
+          "impressions": "6,680",
           "url": "https://www.pinterest.com/pin/1143844005378172571/"
         },
         {
+          "title": "Doctors Recommend This For Detox\n; Opens a new tab",
+          "impressions": "6,645",
+          "url": "https://www.pinterest.com/pin/1143844005377973743/"
+        },
+        {
           "title": "I Tried Turmeric Curcumin for 60 Days\n; Opens a new tab",
-          "impressions": "6,313",
+          "impressions": "6,354",
           "url": "https://www.pinterest.com/pin/1143844005378107375/"
         },
         {
@@ -108,27 +108,27 @@
         },
         {
           "title": "Best Supplement I've Ever Tried\n; Opens a new tab",
-          "impressions": "5,976",
+          "impressions": "6,019",
           "url": "https://www.pinterest.com/pin/1143844005378234189/"
         },
         {
           "title": "Why Everyone's Talking About Melatonin Sleep Gummies\n; Opens a new tab",
-          "impressions": "5,816",
+          "impressions": "5,832",
           "url": "https://www.pinterest.com/pin/1143844005377908718/"
         }
       ],
-      "raw_summary": "Impressions\n,\n274.23k\n,\n143%\nEngagements\n,\n12.19k\n,\n154%\nOutbound clicks\n,\n58\n,\n216%\nSaves\n,\n1.84k\n,\n135%\nTotal audience\n,\n215.99k\n,\n131%\nEngaged audience\n,\n10.15k\n,\n146%"
+      "raw_summary": "Impressions\n,\n275.22k\n,\n143%\nEngagements\n,\n12.24k\n,\n154%\nOutbound clicks\n,\n59\n,\n216%\nSaves\n,\n1.85k\n,\n135%\nTotal audience\n,\n215.99k\n,\n131%\nEngaged audience\n,\n10.15k\n,\n146%"
     },
     {
       "account_id": "cooking",
       "account_name": "Cooking Account",
       "handle": "Q",
-      "fetched_at": "2026-07-07T08:02:03.871317",
+      "fetched_at": "2026-07-07T12:46:14.492839",
       "date_range": "last_30_days",
       "metrics": {
         "impressions": {
-          "value": 118120.0,
-          "display": "118.12k",
+          "value": 118160.0,
+          "display": "118.16k",
           "change_pct": 0
         },
         "engagements": {
@@ -180,17 +180,17 @@
         },
         {
           "title": "I tried the viral recipe and here's what happened \ud83e\udd2f\n; Opens a new tab",
-          "impressions": "4,390",
+          "impressions": "4,395",
           "url": "https://www.pinterest.com/pin/1110911433108258151/"
         },
         {
           "title": "I tried the viral recipe and here's what happened \ud83e\udd2f\n; Opens a new tab",
-          "impressions": "4,226",
+          "impressions": "4,227",
           "url": "https://www.pinterest.com/pin/1110911433109054431/"
         },
         {
           "title": "Magnesium Glycinate \u2014 Everyday Essential\n; Opens a new tab",
-          "impressions": "3,542",
+          "impressions": "3,555",
           "url": "https://www.pinterest.com/pin/1110911433111469407/"
         },
         {
@@ -215,7 +215,7 @@
         },
         {
           "title": "My grandmother's recipe gone viral \ud83d\udc75\n; Opens a new tab",
-          "impressions": "1,660",
+          "impressions": "1,661",
           "url": "https://www.pinterest.com/pin/1110911433108172261/"
         },
         {
@@ -234,13 +234,13 @@
           "url": "https://www.pinterest.com/pin/1110911433108232070/"
         }
       ],
-      "raw_summary": "Impressions\n,\n118.12k\n,\nEngagements\n,\n4.43k\n,\nOutbound clicks\n,\n24\n,\nSaves\n,\n989\n,\nTotal audience\n,\n102.65k\n,\nEngaged audience\n,\n3.77k\n,"
+      "raw_summary": "Impressions\n,\n118.16k\n,\nEngagements\n,\n4.43k\n,\nOutbound clicks\n,\n24\n,\nSaves\n,\n989\n,\nTotal audience\n,\n102.65k\n,\nEngaged audience\n,\n3.77k\n,"
     },
     {
       "account_id": "beauty",
       "account_name": "Beauty Account",
       "handle": "Beauty Account",
-      "fetched_at": "2026-07-07T08:02:14.587183",
+      "fetched_at": "2026-07-07T12:46:24.331705",
       "date_range": "last_30_days",
       "metrics": {},
       "top_pins": [],
@@ -250,7 +250,7 @@
       "account_id": "thunderpickle99",
       "account_name": "Pinterest Account thunderpickle99",
       "handle": "Pinterest Account thunderpickle99",
-      "fetched_at": "2026-07-07T08:02:24.414502",
+      "fetched_at": "2026-07-07T12:46:34.097037",
       "date_range": "last_30_days",
       "metrics": {},
       "top_pins": [],
@@ -260,11 +260,52 @@
       "account_id": "fitness",
       "account_name": "Fitness & Weight Loss Account",
       "handle": "Fitness & Weight Loss Account",
-      "fetched_at": "2026-07-07T08:02:34.153434",
+      "fetched_at": "2026-07-07T12:46:43.996242",
       "date_range": "last_30_days",
       "metrics": {},
       "top_pins": [],
       "raw_summary": ""
+    },
+    {
+      "account_id": "coral_fern39",
+      "account_name": "Pinterest Account coral_fern39",
+      "handle": "C",
+      "fetched_at": "2026-07-07T12:46:53.864332",
+      "date_range": "last_30_days",
+      "metrics": {
+        "impressions": {
+          "value": 0,
+          "display": "-",
+          "change_pct": 0
+        },
+        "engagements": {
+          "value": 0,
+          "display": "-",
+          "change_pct": 0
+        },
+        "outbound_clicks": {
+          "value": 0,
+          "display": "-",
+          "change_pct": 0
+        },
+        "saves": {
+          "value": 0,
+          "display": "-",
+          "change_pct": 0
+        },
+        "total_audience": {
+          "value": 0,
+          "display": "-",
+          "change_pct": 0
+        },
+        "engaged_audience": {
+          "value": 0,
+          "display": "-",
+          "change_pct": 0
+        }
+      },
+      "top_pins": [],
+      "raw_summary": "Impressions\n,\n-\n,\nEngagements\n,\n-\n,\nOutbound clicks\n,\n-\n,\nSaves\n,\n-\n,\nTotal audience\n,\n-\n,\nEngaged audience\n,\n-\n,"
     }
   ]
 }
