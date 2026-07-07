@@ -49,7 +49,7 @@ def parse_percent(text):
 
 def fetch_account_analytics(account, context_label=None):
     """Fetch analytics for a single account using an existing browser context."""
-    session = os.path.expanduser(account['session_path'])
+    session = os.path.expanduser(account.get('session_path') or account.get('cookie_path', ''))
     acct_id = account['id']
     today = datetime.now().strftime('%Y-%m-%d')
 

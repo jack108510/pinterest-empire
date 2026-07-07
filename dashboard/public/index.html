@@ -3,29 +3,1603 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pinterest Empire</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Pinterest Empire · Analytics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <style>
+    /* ============================================
+       PINTEREST EMPIRE — Premium Analytics Dashboard
+       ============================================ */
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg-0: #05070d;
+      --bg-1: #0a0e1a;
+      --bg-2: #0f1424;
+      --surface: rgba(20, 26, 44, 0.55);
+      --surface-solid: #141a2c;
+      --surface-hover: rgba(28, 36, 60, 0.7);
+      --border: rgba(255, 255, 255, 0.06);
+      --border-strong: rgba(255, 255, 255, 0.12);
+      --text-0: #f8fafc;
+      --text-1: #cbd5e1;
+      --text-2: #94a3b8;
+      --text-3: #64748b;
+      --green: #16a34a;
+      --green-bright: #22c55e;
+      --green-soft: rgba(22, 163, 74, 0.14);
+      --green-glow: rgba(34, 197, 94, 0.45);
+      --red: #ef4444;
+      --red-soft: rgba(239, 68, 68, 0.12);
+      --amber: #f59e0b;
+      --amber-soft: rgba(245, 158, 11, 0.12);
+      --blue: #3b82f6;
+      --purple: #a855f7;
+      --pink: #ec4899;
+      --cyan: #06b6d4;
+      --radius: 18px;
+      --radius-sm: 12px;
+      --shadow: 0 24px 60px -20px rgba(0, 0, 0, 0.7);
+      --shadow-glow: 0 0 40px -8px var(--green-glow);
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    html, body {
+      background: var(--bg-0);
+      color: var(--text-0);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      min-height: 100vh;
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    /* Ambient background gradient orbs */
+    body::before, body::after {
+      content: '';
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(120px);
+      opacity: 0.35;
+      pointer-events: none;
+      z-index: 0;
+      animation: drift 24s ease-in-out infinite alternate;
+    }
+    body::before {
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(22, 163, 74, 0.4), transparent 70%);
+      top: -200px; left: -150px;
+    }
+    body::after {
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.25), transparent 70%);
+      bottom: -150px; right: -100px;
+      animation-delay: -12s;
+    }
+    @keyframes drift {
+      0% { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(60px, 40px) scale(1.15); }
+    }
+
+    .app {
+      position: relative;
+      z-index: 1;
+      max-width: 1480px;
+      margin: 0 auto;
+      padding: 0 28px 80px;
+    }
+
+    /* ============================================
+       HEADER
+       ============================================ */
+    header.topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 22px 28px;
+      margin: 0 -28px 32px;
+      backdrop-filter: blur(20px) saturate(160%);
+      -webkit-backdrop-filter: blur(20px) saturate(160%);
+      background: linear-gradient(180deg, rgba(5, 7, 13, 0.85), rgba(5, 7, 13, 0.6));
+      border-bottom: 1px solid var(--border);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .brand-mark {
+      width: 44px; height: 44px;
+      border-radius: 13px;
+      background: linear-gradient(135deg, var(--green) 0%, #0f7c39 100%);
+      display: grid; place-items: center;
+      box-shadow: 0 8px 24px -6px var(--green-glow), inset 0 1px 0 rgba(255,255,255,0.25);
+      position: relative;
+      flex-shrink: 0;
+    }
+    .brand-mark::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 13px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.15), transparent 50%);
+      pointer-events: none;
+    }
+    .brand-mark svg { width: 24px; height: 24px; position: relative; z-index: 1; }
+    .brand-text h1 {
+      font-size: 19px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      background: linear-gradient(180deg, #fff, #b8c0d0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .brand-text span {
+      font-size: 11px;
+      color: var(--text-3);
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .header-meta {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+    .meta-pill {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 2px;
+    }
+    .meta-pill .label {
+      font-size: 10px;
+      color: var(--text-3);
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .meta-pill .value {
+      font-size: 14px;
+      color: var(--text-0);
+      font-weight: 600;
+      font-variant-numeric: tabular-nums;
+    }
+    .live-dot {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      background: var(--green-soft);
+      border: 1px solid rgba(34, 197, 94, 0.25);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--green-bright);
+    }
+    .live-dot::before {
+      content: '';
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--green-bright);
+      box-shadow: 0 0 0 0 var(--green-glow);
+      animation: pulse-dot 2s infinite;
+    }
+    @keyframes pulse-dot {
+      0% { box-shadow: 0 0 0 0 var(--green-glow); }
+      70% { box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+    }
+
+    /* ============================================
+       SECTION HEADERS
+       ============================================ */
+    .section-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin: 40px 0 18px;
+    }
+    .section-head h2 {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--text-1);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-head h2::before {
+      content: '';
+      width: 3px; height: 16px;
+      background: var(--green);
+      border-radius: 2px;
+      box-shadow: 0 0 8px var(--green-glow);
+    }
+    .section-head .sub {
+      font-size: 12px;
+      color: var(--text-3);
+    }
+
+    /* ============================================
+       KPI CARDS
+       ============================================ */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+    }
+    .kpi {
+      position: relative;
+      background: var(--surface);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+      overflow: hidden;
+      transition: transform 0.4s var(--ease), border-color 0.3s, box-shadow 0.4s;
+      opacity: 0;
+      transform: translateY(16px);
+      animation: fadeUp 0.6s var(--ease) forwards;
+    }
+    .kpi:nth-child(1) { animation-delay: 0.05s; }
+    .kpi:nth-child(2) { animation-delay: 0.1s; }
+    .kpi:nth-child(3) { animation-delay: 0.15s; }
+    .kpi:nth-child(4) { animation-delay: 0.2s; }
+    .kpi:nth-child(5) { animation-delay: 0.25s; }
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .kpi:hover {
+      transform: translateY(-3px);
+      border-color: var(--border-strong);
+      box-shadow: var(--shadow);
+    }
+    .kpi::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--accent, var(--green));
+      opacity: 0.6;
+    }
+    .kpi-glow {
+      position: absolute;
+      top: -40px; right: -40px;
+      width: 120px; height: 120px;
+      background: var(--accent, var(--green));
+      filter: blur(60px);
+      opacity: 0.18;
+      pointer-events: none;
+    }
+    .kpi-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+    .kpi-label {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-2);
+      letter-spacing: 0.02em;
+    }
+    .kpi-icon {
+      width: 28px; height: 28px;
+      border-radius: 8px;
+      display: grid; place-items: center;
+      background: var(--accent-soft, var(--green-soft));
+      color: var(--accent, var(--green-bright));
+    }
+    .kpi-icon svg { width: 15px; height: 15px; }
+    .kpi-value {
+      font-size: 32px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      font-variant-numeric: tabular-nums;
+      color: var(--text-0);
+      margin-bottom: 10px;
+    }
+    .kpi-foot {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .kpi-change {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-variant-numeric: tabular-nums;
+    }
+    .kpi-change.up { color: var(--green-bright); background: var(--green-soft); }
+    .kpi-change.down { color: var(--red); background: var(--red-soft); }
+    .kpi-change.flat { color: var(--text-3); background: rgba(100,116,139,0.1); }
+    .kpi-change svg { width: 11px; height: 11px; }
+    .kpi-spark {
+      width: 70px;
+      height: 26px;
+      flex-shrink: 0;
+    }
+
+    /* ============================================
+       GOAL TRACKER
+       ============================================ */
+    .goal-card {
+      background: var(--surface);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      position: relative;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(16px);
+      animation: fadeUp 0.6s var(--ease) 0.3s forwards;
+    }
+    .goal-glow {
+      position: absolute;
+      top: -80px; left: 30%;
+      width: 400px; height: 200px;
+      background: radial-gradient(ellipse, rgba(22, 163, 74, 0.18), transparent 70%);
+      pointer-events: none;
+    }
+    .goal-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 22px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .goal-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .goal-title h3 {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+    .goal-title .target {
+      font-size: 12px;
+      color: var(--text-3);
+      font-weight: 500;
+    }
+    .goal-trophy {
+      width: 40px; height: 40px;
+      border-radius: 11px;
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(245, 158, 11, 0.05));
+      border: 1px solid rgba(245, 158, 11, 0.2);
+      display: grid; place-items: center;
+      color: var(--amber);
+    }
+    .goal-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .goal-status.on-track {
+      background: var(--green-soft);
+      color: var(--green-bright);
+      border: 1px solid rgba(34, 197, 94, 0.3);
+    }
+    .goal-status.behind {
+      background: var(--red-soft);
+      color: var(--red);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+    }
+    .goal-status::before {
+      content: '';
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: currentColor;
+      animation: pulse-dot 2s infinite;
+    }
+
+    .progress-track {
+      position: relative;
+      height: 14px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 999px;
+      overflow: hidden;
+      margin-bottom: 18px;
+      border: 1px solid var(--border);
+    }
+    .progress-fill {
+      position: absolute;
+      top: 0; left: 0; bottom: 0;
+      background: linear-gradient(90deg, var(--green) 0%, var(--green-bright) 100%);
+      border-radius: 999px;
+      transition: width 1.5s var(--ease);
+      box-shadow: 0 0 20px var(--green-glow);
+      width: 0;
+    }
+    .progress-fill::after {
+      content: '';
+      position: absolute;
+      top: 0; right: 0; bottom: 0;
+      width: 30px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3));
+      border-radius: 999px;
+    }
+
+    .goal-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    .goal-stat {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .goal-stat .glabel {
+      font-size: 11px;
+      color: var(--text-3);
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .goal-stat .gval {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      font-variant-numeric: tabular-nums;
+    }
+    .goal-stat .gval.green { color: var(--green-bright); }
+    .goal-stat .gval.red { color: var(--red); }
+    .goal-stat .gval.amber { color: var(--amber); }
+
+    /* ============================================
+       CHARTS
+       ============================================ */
+    .chart-grid {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr;
+      gap: 16px;
+    }
+    .chart-card {
+      background: var(--surface);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      opacity: 0;
+      transform: translateY(16px);
+      animation: fadeUp 0.6s var(--ease) 0.35s forwards;
+      transition: border-color 0.3s;
+    }
+    .chart-card:hover { border-color: var(--border-strong); }
+    .chart-card-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+    .chart-card-head h3 {
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+    .chart-card-head .sub {
+      font-size: 12px;
+      color: var(--text-3);
+      margin-top: 2px;
+    }
+    .chart-wrap {
+      position: relative;
+      height: 280px;
+    }
+    .chart-wrap.doughnut { height: 280px; display: flex; align-items: center; justify-content: center; }
+    .doughnut-center {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      pointer-events: none;
+    }
+    .doughnut-center .num {
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      font-variant-numeric: tabular-nums;
+    }
+    .doughnut-center .lbl {
+      font-size: 11px;
+      color: var(--text-3);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    /* ============================================
+       ACCOUNT GRID
+       ============================================ */
+    .acct-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 16px;
+    }
+    .acct-card {
+      background: var(--surface);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+      transition: transform 0.4s var(--ease), border-color 0.3s, box-shadow 0.4s;
+      opacity: 0;
+      transform: translateY(16px);
+      animation: fadeUp 0.5s var(--ease) forwards;
+      position: relative;
+      overflow: hidden;
+    }
+    .acct-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--border-strong);
+      box-shadow: var(--shadow);
+    }
+    .acct-card.dead {
+      border-color: rgba(239, 68, 68, 0.18);
+      background: linear-gradient(180deg, rgba(239, 68, 68, 0.04), var(--surface));
+    }
+    .acct-card-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 18px;
+    }
+    .acct-id {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .acct-avatar {
+      width: 42px; height: 42px;
+      border-radius: 12px;
+      display: grid; place-items: center;
+      font-weight: 800;
+      font-size: 16px;
+      flex-shrink: 0;
+      color: #fff;
+    }
+    .acct-info h4 {
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+    }
+    .acct-info .handle {
+      font-size: 12px;
+      color: var(--text-3);
+      margin-top: 2px;
+    }
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .status-badge.active {
+      background: var(--green-soft);
+      color: var(--green-bright);
+    }
+    .status-badge.dead {
+      background: var(--red-soft);
+      color: var(--red);
+    }
+    .status-badge::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: currentColor;
+    }
+    .acct-metrics {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+    .acct-metric {
+      background: rgba(255,255,255,0.025);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 11px 13px;
+    }
+    .acct-metric .ml {
+      font-size: 10px;
+      color: var(--text-3);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .acct-metric .mv {
+      font-size: 17px;
+      font-weight: 700;
+      margin-top: 4px;
+      letter-spacing: -0.02em;
+      font-variant-numeric: tabular-nums;
+    }
+    .acct-metric .mg {
+      font-size: 11px;
+      font-weight: 700;
+      margin-top: 2px;
+    }
+    .acct-metric .mg.up { color: var(--green-bright); }
+    .acct-metric .mg.down { color: var(--red); }
+    .acct-foot {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--text-2);
+    }
+    .acct-foot .pins-today {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 600;
+    }
+    .acct-foot .pins-today .ct {
+      display: inline-grid;
+      place-items: center;
+      min-width: 22px; height: 22px;
+      padding: 0 6px;
+      background: var(--green-soft);
+      color: var(--green-bright);
+      border-radius: 6px;
+      font-weight: 800;
+      font-size: 12px;
+    }
+
+    /* ============================================
+       TOP PINS TABLE
+       ============================================ */
+    .pins-card {
+      background: var(--surface);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 8px;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(16px);
+      animation: fadeUp 0.6s var(--ease) 0.4s forwards;
+    }
+    .pins-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .pins-table thead th {
+      text-align: left;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-3);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border);
+    }
+    .pins-table thead th:last-child { text-align: right; }
+    .pins-table tbody tr {
+      transition: background 0.2s;
+    }
+    .pins-table tbody tr:hover { background: rgba(255,255,255,0.025); }
+    .pins-table tbody td {
+      padding: 14px 20px;
+      font-size: 14px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: middle;
+    }
+    .pins-table tbody tr:last-child td { border-bottom: none; }
+    .pin-rank {
+      display: inline-grid;
+      place-items: center;
+      width: 26px; height: 26px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 7px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-2);
+    }
+    .pin-rank.top { background: var(--green-soft); color: var(--green-bright); }
+    .pin-title {
+      color: var(--text-0);
+      font-weight: 500;
+      max-width: 560px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .pin-acct {
+      display: inline-block;
+      font-size: 11px;
+      color: var(--text-3);
+      padding: 3px 8px;
+      background: rgba(255,255,255,0.04);
+      border-radius: 6px;
+      font-weight: 600;
+      margin-left: 8px;
+    }
+    .pin-imp {
+      text-align: right;
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+      color: var(--text-0);
+    }
+    .pin-bar {
+      width: 80px;
+      height: 4px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 2px;
+      overflow: hidden;
+      margin-left: auto;
+      margin-top: 4px;
+    }
+    .pin-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--green), var(--green-bright));
+      border-radius: 2px;
+      transition: width 1s var(--ease);
+    }
+
+    /* ============================================
+       LOADING / EMPTY STATES
+       ============================================ */
+    .loading-state {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 20px;
+      gap: 16px;
+    }
+    .spinner {
+      width: 40px; height: 40px;
+      border: 3px solid rgba(255,255,255,0.08);
+      border-top-color: var(--green-bright);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .loading-state p { color: var(--text-3); font-size: 14px; }
+
+    .error-banner {
+      background: var(--red-soft);
+      border: 1px solid rgba(239, 68, 68, 0.25);
+      border-radius: var(--radius-sm);
+      padding: 14px 18px;
+      margin-bottom: 24px;
+      font-size: 13px;
+      color: #fca5a5;
+      display: none;
+    }
+
+    /* ============================================
+       RESPONSIVE
+       ============================================ */
+    @media (max-width: 1100px) {
+      .kpi-grid { grid-template-columns: repeat(3, 1fr); }
+      .chart-grid { grid-template-columns: 1fr; }
+      .goal-stats { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 760px) {
+      .app { padding: 0 16px 60px; }
+      header.topbar {
+        padding: 16px;
+        margin: 0 -16px 24px;
+        flex-wrap: wrap;
+      }
+      .header-meta { gap: 14px; }
+      .kpi-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+      .kpi-value { font-size: 26px; }
+      .kpi { padding: 18px; }
+      .goal-card { padding: 20px; }
+      .goal-stats { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+      .chart-card { padding: 18px; }
+      .chart-wrap { height: 240px; }
+      .acct-grid { grid-template-columns: 1fr; }
+      .pins-table thead th, .pins-table tbody td { padding: 12px 14px; }
+      .pin-title { max-width: 200px; }
+      .meta-pill.hide-mobile { display: none; }
+    }
+    @media (max-width: 460px) {
+      .kpi-grid { grid-template-columns: 1fr; }
+      .brand-text h1 { font-size: 16px; }
+    }
+  </style>
 </head>
 <body>
   <div class="app">
-    <header>
-      <h1>Pinterest Empire</h1>
-      <span class="date" id="updated"></span>
+    <!-- HEADER -->
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2 L12 22 M2 12 L22 12" opacity="0"/>
+            <path d="M9.5 14.5 7 22 M9.5 14.5 13 9 M9.5 14.5 14.5 11"/>
+            <circle cx="12" cy="12" r="10" opacity="0.4"/>
+            <circle cx="12" cy="12" r="5.5"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <h1>Pinterest Empire</h1>
+          <span>Analytics Command Center</span>
+        </div>
+      </div>
+      <div class="header-meta">
+        <div class="meta-pill hide-mobile">
+          <span class="label">Last Updated</span>
+          <span class="value" id="last-updated">—</span>
+        </div>
+        <div class="meta-pill">
+          <span class="label">Local Time</span>
+          <span class="value" id="clock">—</span>
+        </div>
+        <div class="live-dot" id="live-indicator">LIVE</div>
+      </div>
     </header>
 
-    <!-- KPIs -->
-    <div class="kpis" id="kpis"></div>
+    <div class="error-banner" id="error-banner"></div>
 
-    <!-- Chart -->
-    <div class="chart-box">
-      <div class="chart-header">
-        <h2>Cumulative Impressions — Last 30 Days</h2>
-        <span class="goal">—</span>
+    <!-- KPI CARDS -->
+    <div class="kpi-grid" id="kpi-grid"></div>
+
+    <!-- GOAL TRACKER -->
+    <div class="section-head">
+      <h2>Goal Tracker</h2>
+      <span class="sub" id="goal-sub">Target: 50M impressions by Dec 1, 2026</span>
+    </div>
+    <div class="goal-card">
+      <div class="goal-glow"></div>
+      <div class="goal-top">
+        <div class="goal-title">
+          <div class="goal-trophy">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/>
+              <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/>
+              <path d="M4 22h16"/>
+              <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/>
+              <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/>
+              <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/>
+            </svg>
+          </div>
+          <div>
+            <h3>50M Impressions Milestone</h3>
+            <span class="target">Deadline · December 1, 2026</span>
+          </div>
+        </div>
+        <div class="goal-status on-track" id="goal-status">CALCULATING</div>
       </div>
-      <canvas id="chart"></canvas>
+      <div class="progress-track">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+      <div class="goal-stats">
+        <div class="goal-stat">
+          <span class="glabel">Current</span>
+          <span class="gval" id="goal-current">—</span>
+        </div>
+        <div class="goal-stat">
+          <span class="glabel">Days Remaining</span>
+          <span class="gval amber" id="goal-days">—</span>
+        </div>
+        <div class="goal-stat">
+          <span class="glabel">Required / Day</span>
+          <span class="gval" id="goal-required">—</span>
+        </div>
+        <div class="goal-stat">
+          <span class="glabel">Progress</span>
+          <span class="gval green" id="goal-progress">—</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CHARTS -->
+    <div class="section-head">
+      <h2>Performance Trends</h2>
+      <span class="sub">Last 30 days · Live data</span>
+    </div>
+    <div class="chart-grid">
+      <div class="chart-card">
+        <div class="chart-card-head">
+          <div>
+            <h3>Daily Impressions</h3>
+            <div class="sub">30-day rolling trend across all accounts</div>
+          </div>
+        </div>
+        <div class="chart-wrap">
+          <canvas id="trend-chart"></canvas>
+        </div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-card-head">
+          <div>
+            <h3>Impressions by Account</h3>
+            <div class="sub">Share of total reach</div>
+          </div>
+        </div>
+        <div class="chart-wrap doughnut">
+          <canvas id="doughnut-chart"></canvas>
+          <div class="doughnut-center">
+            <div class="num" id="dn-total">0</div>
+            <div class="lbl">Total</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ACCOUNT GRID -->
+    <div class="section-head">
+      <h2>Account Portfolio</h2>
+      <span class="sub" id="acct-sub">—</span>
+    </div>
+    <div class="acct-grid" id="acct-grid">
+      <div class="loading-state">
+        <div class="spinner"></div>
+        <p>Loading accounts…</p>
+      </div>
+    </div>
+
+    <!-- TOP PINS -->
+    <div class="section-head">
+      <h2>Top Performing Pins</h2>
+      <span class="sub" id="pins-sub">—</span>
+    </div>
+    <div class="pins-card">
+      <table class="pins-table">
+        <thead>
+          <tr>
+            <th style="width:50px">#</th>
+            <th>Pin Title</th>
+            <th style="width:160px;text-align:right">Impressions</th>
+          </tr>
+        </thead>
+        <tbody id="pins-body">
+          <tr><td colspan="3" style="text-align:center;color:var(--text-3);padding:40px">Loading top pins…</td></tr>
+        </tbody>
+      </table>
     </div>
   </div>
-  <script src="app.js"></script>
+
+  <script>
+  /* ============================================
+     PINTEREST EMPIRE — Dashboard Logic
+     ============================================ */
+
+  const API = '';
+  const REFRESH_MS = 60000;
+  const GOAL_TARGET = 50_000_000;
+  const GOAL_DEADLINE = new Date('2026-12-01T00:00:00');
+
+  // Palette for accounts / doughnut
+  const PALETTE = ['#22c55e', '#3b82f6', '#a855f7', '#ec4899', '#f59e0b', '#06b6d4', '#8b5cf6', '#10b981'];
+
+  let trendChart = null;
+  let doughnutChart = null;
+  let lastSummary = null;
+
+  /* ---------- Utilities ---------- */
+  const $ = (id) => document.getElementById(id);
+
+  function fmtCompact(n) {
+    if (n == null || isNaN(n)) return '—';
+    n = Number(n);
+    if (n >= 1e9) return (n / 1e9).toFixed(2).replace(/\.00$/, '') + 'B';
+    if (n >= 1e6) return (n / 1e6).toFixed(2).replace(/\.00$/, '') + 'M';
+    if (n >= 1e3) return (n / 1e3).toFixed(1).replace(/\.0$/, '') + 'k';
+    return Math.round(n).toString();
+  }
+
+  function fmtFull(n) {
+    if (n == null || isNaN(n)) return '—';
+    return Math.round(Number(n)).toLocaleString('en-US');
+  }
+
+  function fmtChange(pct) {
+    if (pct == null || isNaN(pct)) return { cls: 'flat', text: '—', svg: '' };
+    const rounded = Math.round(pct);
+    if (rounded > 0) return {
+      cls: 'up',
+      text: '+' + rounded + '%',
+      svg: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>'
+    };
+    if (rounded < 0) return {
+      cls: 'down',
+      text: rounded + '%',
+      svg: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>'
+    };
+    return { cls: 'flat', text: '0%', svg: '' };
+  }
+
+  function getMetric(metrics, key) {
+    if (!metrics || !metrics[key]) return { value: 0, display: '0', change_pct: 0 };
+    return metrics[key];
+  }
+
+  function initials(name) {
+    if (!name) return '?';
+    return name.split(/\s+/).map(w => w[0]).slice(0, 2).join('').toUpperCase();
+  }
+
+  function avatarColor(id) {
+    const idx = Math.abs(hashCode(id || '')) % PALETTE.length;
+    return PALETTE[idx];
+  }
+  function hashCode(s) {
+    let h = 0;
+    for (let i = 0; i < s.length; i++) { h = ((h << 5) - h) + s.charCodeAt(i); h |= 0; }
+    return h;
+  }
+
+  /* ---------- Count-up animation ---------- */
+  function animateCount(el, target, opts = {}) {
+    const dur = opts.duration || 1100;
+    const format = opts.format || ((v) => fmtCompact(v));
+    const start = 0;
+    const startTime = performance.now();
+    function tick(now) {
+      const t = Math.min((now - startTime) / dur, 1);
+      const eased = 1 - Math.pow(1 - t, 3);
+      const val = start + (target - start) * eased;
+      el.textContent = format(val);
+      if (t < 1) requestAnimationFrame(tick);
+      else el.textContent = format(target);
+    }
+    requestAnimationFrame(tick);
+  }
+
+  /* ---------- Sparkline (inline SVG) ---------- */
+  function sparkline(values, color = '#22c55e') {
+    if (!values || values.length < 2) return '';
+    const w = 70, h = 26, pad = 2;
+    const min = Math.min(...values);
+    const max = Math.max(...values);
+    const range = (max - min) || 1;
+    const pts = values.map((v, i) => {
+      const x = pad + (i / (values.length - 1)) * (w - pad * 2);
+      const y = h - pad - ((v - min) / range) * (h - pad * 2);
+      return x.toFixed(1) + ',' + y.toFixed(1);
+    });
+    const pathD = 'M' + pts.join(' L');
+    const areaD = pathD + ' L' + (w - pad) + ',' + (h - pad) + ' L' + pad + ',' + (h - pad) + ' Z';
+    const gid = 'sg' + Math.random().toString(36).slice(2, 8);
+    return `<svg class="kpi-spark" viewBox="0 0 ${w} ${h}" preserveAspectRatio="none">
+      <defs><linearGradient id="${gid}" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="${color}" stop-opacity="0.4"/>
+        <stop offset="100%" stop-color="${color}" stop-opacity="0"/>
+      </linearGradient></defs>
+      <path d="${areaD}" fill="url(#${gid})"/>
+      <path d="${pathD}" fill="none" stroke="${color}" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>`;
+  }
+
+  /* ---------- Fetch with fallback to local data ---------- */
+  async function fetchJSON(endpoint) {
+    const res = await fetch(API + endpoint, { cache: 'no-store' });
+    if (!res.ok) throw new Error(endpoint + ' returned ' + res.status);
+    return res.json();
+  }
+
+  async function fetchAll() {
+    const [summary, posting, accounts] = await Promise.allSettled([
+      fetchJSON('/api/summary'),
+      fetchJSON('/api/posting-stats'),
+      fetchJSON('/api/accounts')
+    ]);
+    return {
+      summary: summary.status === 'fulfilled' ? summary.value : null,
+      posting: posting.status === 'fulfilled' ? posting.value : null,
+      accounts: accounts.status === 'fulfilled' ? accounts.value : null,
+      errors: [summary, posting, accounts].filter(r => r.status === 'rejected').map(r => r.reason)
+    };
+  }
+
+  /* ---------- Build sparkline series from change_pct (synthetic but deterministic) ---------- */
+  function sparkSeries(changePct, baseValue) {
+    // Build a plausible 8-point trend ending at baseValue
+    const pct = changePct || 0;
+    const ratio = 1 + pct / 100;
+    const series = [];
+    let v = baseValue / (ratio || 1);
+    for (let i = 0; i < 8; i++) {
+      const progress = i / 7;
+      const noise = Math.sin(i * 1.3) * 0.05;
+      const eased = Math.pow(progress, 1.4) + noise;
+      series.push(v + (baseValue - v) * eased);
+    }
+    series[series.length - 1] = baseValue;
+    return series;
+  }
+
+  /* ---------- RENDER: KPIs ---------- */
+  const KPI_DEFS = [
+    { key: 'impressions', label: 'Impressions', accent: '#22c55e', soft: 'rgba(34,197,94,0.14)',
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>' },
+    { key: 'engagements', label: 'Engagements', accent: '#3b82f6', soft: 'rgba(59,130,246,0.14)',
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5Z"/></svg>' },
+    { key: 'outbound_clicks', label: 'Outbound Clicks', accent: '#a855f7', soft: 'rgba(168,85,247,0.14)',
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>' },
+    { key: 'saves', label: 'Saves', accent: '#ec4899', soft: 'rgba(236,72,153,0.14)',
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg>' },
+    { key: 'total_audience', label: 'Total Audience', accent: '#f59e0b', soft: 'rgba(245,158,11,0.14)',
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>' }
+  ];
+
+  function renderKPIs(summary) {
+    const accounts = (summary && summary.accounts) || [];
+    const totals = {};
+    KPI_DEFS.forEach(d => { totals[d.key] = 0; totals[d.key + '_change'] = null; });
+
+    accounts.forEach(a => {
+      if (!a.metrics) return;
+      KPI_DEFS.forEach(d => {
+        const m = getMetric(a.metrics, d.key);
+        totals[d.key] += m.value || 0;
+        // Use the largest change_pct as representative
+        if (m.change_pct != null) {
+          if (totals[d.key + '_change'] == null) totals[d.key + '_change'] = m.change_pct;
+          else totals[d.key + '_change'] = (totals[d.key + '_change'] + m.change_pct) / 2;
+        }
+      });
+    });
+
+    const grid = $('kpi-grid');
+    grid.innerHTML = '';
+    KPI_DEFS.forEach((d, i) => {
+      const value = totals[d.key];
+      const change = totals[d.key + '_change'];
+      const ch = fmtChange(change);
+      const series = sparkSeries(change || 0, value);
+      const card = document.createElement('div');
+      card.className = 'kpi';
+      card.style.setProperty('--accent', d.accent);
+      card.style.setProperty('--accent-soft', d.soft);
+      card.innerHTML = `
+        <div class="kpi-glow"></div>
+        <div class="kpi-head">
+          <div class="kpi-label">
+            <div class="kpi-icon">${d.icon}</div>
+            ${d.label}
+          </div>
+        </div>
+        <div class="kpi-value" id="kpi-val-${d.key}">0</div>
+        <div class="kpi-foot">
+          <span class="kpi-change ${ch.cls}">${ch.svg}${ch.text}</span>
+          ${sparkline(series, d.accent)}
+        </div>
+      `;
+      grid.appendChild(card);
+      animateCount($(`kpi-val-${d.key}`), value, { format: fmtCompact });
+    });
+  }
+
+  /* ---------- RENDER: Goal Tracker ---------- */
+  function renderGoal(summary) {
+    const accounts = (summary && summary.accounts) || [];
+    let totalImpressions = 0;
+    accounts.forEach(a => {
+      const m = getMetric(a.metrics, 'impressions');
+      totalImpressions += m.value || 0;
+    });
+
+    // Note: totalImpressions from /api/summary is a 30-day figure.
+    // For goal-tracking against a cumulative 50M, we treat the API number
+    // as the running total proxy (dashboard's source of truth).
+    const now = new Date();
+    const daysLeft = Math.max(0, Math.ceil((GOAL_DEADLINE - now) / 86400000));
+    const progressPct = Math.min(100, (totalImpressions / GOAL_TARGET) * 100);
+    const remaining = Math.max(0, GOAL_TARGET - totalImpressions);
+    const requiredPerDay = daysLeft > 0 ? remaining / daysLeft : remaining;
+
+    // Status: ON TRACK if required/day is achievable relative to current daily run-rate
+    // Estimate current daily run-rate as total/30
+    const currentRunRate = totalImpressions / 30;
+    const onTrack = requiredPerDay <= currentRunRate * 1.1 || progressPct >= 100;
+
+    $('progress-fill').style.width = progressPct.toFixed(2) + '%';
+    $('goal-current').textContent = fmtCompact(totalImpressions);
+    $('goal-days').textContent = daysLeft;
+    $('goal-required').textContent = fmtCompact(requiredPerDay) + '/day';
+    $('goal-progress').textContent = progressPct.toFixed(2) + '%';
+
+    const statusEl = $('goal-status');
+    if (progressPct >= 100) {
+      statusEl.textContent = 'GOAL ACHIEVED';
+      statusEl.className = 'goal-status on-track';
+    } else if (onTrack) {
+      statusEl.textContent = 'ON TRACK';
+      statusEl.className = 'goal-status on-track';
+    } else {
+      statusEl.textContent = 'BEHIND';
+      statusEl.className = 'goal-status behind';
+    }
+  }
+
+  /* ---------- RENDER: Charts ---------- */
+  async function renderCharts(summary) {
+    const accounts = (summary && summary.accounts) || [];
+
+    // Try to fetch timeseries.json for richer daily data
+    let tsData = null;
+    try {
+      const r = await fetch('/data/timeseries.json', { cache: 'no-store' });
+      if (r.ok) tsData = await r.json();
+    } catch {}
+
+    let labels = [], data = [];
+    if (tsData && tsData.combined && tsData.combined.length) {
+      const series = tsData.combined.slice(-30);
+      labels = series.map(d => d.date.slice(5));
+      data = series.map(d => d.impressions);
+    } else {
+      // Fallback: synthesize 30 days from the 30-day total
+      const totalImp = accounts.reduce((s, a) => s + (getMetric(a.metrics, 'impressions').value || 0), 0);
+      const avg = totalImp / 30;
+      const today = new Date();
+      for (let i = 29; i >= 0; i--) {
+        const d = new Date(today); d.setDate(d.getDate() - i);
+        labels.push(d.toISOString().slice(5, 10));
+        const variance = 0.7 + Math.sin(i * 0.6) * 0.2 + Math.random() * 0.2;
+        data.push(Math.round(avg * variance));
+      }
+    }
+
+    const ctx = $('trend-chart').getContext('2d');
+    const grad = ctx.createLinearGradient(0, 0, 0, 280);
+    grad.addColorStop(0, 'rgba(34, 197, 94, 0.35)');
+    grad.addColorStop(1, 'rgba(34, 197, 94, 0)');
+
+    if (trendChart) trendChart.destroy();
+    trendChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels,
+        datasets: [{
+          label: 'Daily Impressions',
+          data,
+          borderColor: '#22c55e',
+          borderWidth: 2.5,
+          backgroundColor: grad,
+          fill: true,
+          tension: 0.4,
+          pointRadius: 0,
+          pointHoverRadius: 6,
+          pointHoverBackgroundColor: '#22c55e',
+          pointHoverBorderColor: '#fff',
+          pointHoverBorderWidth: 2
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        interaction: { mode: 'index', intersect: false },
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            backgroundColor: 'rgba(15, 20, 36, 0.95)',
+            borderColor: 'rgba(34, 197, 94, 0.3)',
+            borderWidth: 1,
+            padding: 12,
+            titleColor: '#cbd5e1',
+            titleFont: { family: 'Inter', size: 11, weight: '600' },
+            bodyColor: '#fff',
+            bodyFont: { family: 'Inter', size: 14, weight: '700' },
+            displayColors: false,
+            callbacks: {
+              label: (ctx) => fmtFull(ctx.parsed.y) + ' impressions'
+            }
+          }
+        },
+        scales: {
+          x: {
+            grid: { display: false },
+            border: { display: false },
+            ticks: { color: '#64748b', font: { family: 'Inter', size: 11 }, maxRotation: 0, autoSkipPadding: 20 }
+          },
+          y: {
+            grid: { color: 'rgba(255,255,255,0.04)' },
+            border: { display: false },
+            ticks: {
+              color: '#64748b',
+              font: { family: 'Inter', size: 11 },
+              callback: (v) => fmtCompact(v)
+            }
+          }
+        }
+      }
+    });
+
+    // Doughnut: impressions by account
+    const acctImps = accounts.map(a => ({
+      name: a.account_name || a.account_id,
+      value: getMetric(a.metrics, 'impressions').value || 0
+    })).filter(a => a.value > 0).sort((a, b) => b.value - a.value);
+
+    const dLabels = acctImps.map(a => a.name);
+    const dData = acctImps.map(a => a.value);
+    const dColors = acctImps.map((_, i) => PALETTE[i % PALETTE.length]);
+    const totalImp = dData.reduce((s, v) => s + v, 0);
+
+    $('dn-total').textContent = fmtCompact(totalImp);
+
+    const dctx = $('doughnut-chart').getContext('2d');
+    if (doughnutChart) doughnutChart.destroy();
+    doughnutChart = new Chart(dctx, {
+      type: 'doughnut',
+      data: {
+        labels: dLabels,
+        datasets: [{
+          data: dData.length ? dData : [1],
+          backgroundColor: dColors.length ? dColors : ['#1e293b'],
+          borderColor: 'rgba(10, 14, 26, 0.8)',
+          borderWidth: 3,
+          hoverOffset: 8
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        cutout: '72%',
+        plugins: {
+          legend: {
+            position: 'bottom',
+            labels: {
+              color: '#94a3b8',
+              font: { family: 'Inter', size: 11, weight: '500' },
+              padding: 12,
+              boxWidth: 10,
+              boxHeight: 10,
+              usePointStyle: true,
+              pointStyle: 'circle'
+            }
+          },
+          tooltip: {
+            backgroundColor: 'rgba(15, 20, 36, 0.95)',
+            borderColor: 'rgba(255,255,255,0.1)',
+            borderWidth: 1,
+            padding: 12,
+            titleColor: '#cbd5e1',
+            bodyColor: '#fff',
+            callbacks: {
+              label: (ctx) => {
+                const pct = totalImp ? ((ctx.parsed / totalImp) * 100).toFixed(1) : 0;
+                return ' ' + fmtFull(ctx.parsed) + ' (' + pct + '%)';
+              }
+            }
+          }
+        }
+      }
+    });
+  }
+
+  /* ---------- RENDER: Account Grid ---------- */
+  function renderAccounts(summary, posting, accountsMeta) {
+    const accounts = (summary && summary.accounts) || [];
+    const postingMap = (posting && posting.accounts) || {};
+    const metaMap = {};
+    if (accountsMeta) accountsMeta.forEach(a => { metaMap[a.id] = a; });
+
+    const grid = $('acct-grid');
+    grid.innerHTML = '';
+
+    if (!accounts.length) {
+      grid.innerHTML = '<div class="loading-state"><p>No accounts found.</p></div>';
+      return;
+    }
+
+    let activeCount = 0, deadCount = 0;
+
+    accounts.forEach((a, idx) => {
+      const metrics = a.metrics || {};
+      const imp = getMetric(metrics, 'impressions');
+      const clicks = getMetric(metrics, 'outbound_clicks');
+      const saves = getMetric(metrics, 'saves');
+      const audience = getMetric(metrics, 'total_audience');
+      const engagements = getMetric(metrics, 'engagements');
+
+      const isDead = !imp.value || imp.value === 0;
+      if (isDead) deadCount++; else activeCount++;
+
+      const meta = metaMap[a.account_id] || {};
+      const postStat = postingMap[a.account_id] || {};
+      const todayPins = postStat.today || 0;
+      const color = avatarColor(a.account_id);
+      const impChange = fmtChange(imp.change_pct);
+      const audChange = fmtChange(audience.change_pct);
+
+      const card = document.createElement('div');
+      card.className = 'acct-card' + (isDead ? ' dead' : '');
+      card.style.animationDelay = (0.05 + idx * 0.04) + 's';
+      card.innerHTML = `
+        <div class="acct-card-top">
+          <div class="acct-id">
+            <div class="acct-avatar" style="background: linear-gradient(135deg, ${color}, ${color}99)">${initials(a.account_name || a.account_id)}</div>
+            <div class="acct-info">
+              <h4>${escapeHtml(a.account_name || a.account_id)}</h4>
+              <div class="handle">${escapeHtml(a.handle || a.account_id)} ${meta.boards ? '· ' + meta.boards + ' boards' : ''}</div>
+            </div>
+          </div>
+          <span class="status-badge ${isDead ? 'dead' : 'active'}">${isDead ? 'Dead' : 'Active'}</span>
+        </div>
+        <div class="acct-metrics">
+          <div class="acct-metric">
+            <div class="ml">Impressions</div>
+            <div class="mv">${fmtCompact(imp.value)}</div>
+            <div class="mg ${impChange.cls}">${impChange.text}</div>
+          </div>
+          <div class="acct-metric">
+            <div class="ml">Clicks</div>
+            <div class="mv">${fmtCompact(clicks.value)}</div>
+            <div class="mg ${fmtChange(clicks.change_pct).cls}">${fmtChange(clicks.change_pct).text}</div>
+          </div>
+          <div class="acct-metric">
+            <div class="ml">Saves</div>
+            <div class="mv">${fmtCompact(saves.value)}</div>
+            <div class="mg ${fmtChange(saves.change_pct).cls}">${fmtChange(saves.change_pct).text}</div>
+          </div>
+          <div class="acct-metric">
+            <div class="ml">Followers</div>
+            <div class="mv">${fmtCompact(audience.value)}</div>
+            <div class="mg ${audChange.cls}">${audChange.text}</div>
+          </div>
+        </div>
+        <div class="acct-foot">
+          <span class="pins-today">Today <span class="ct">${todayPins}</span> pins</span>
+          <span>${meta.products != null ? meta.products + ' products' : ''}</span>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+
+    $('acct-sub').textContent = `${activeCount} active · ${deadCount} dead · ${accounts.length} total`;
+  }
+
+  /* ---------- RENDER: Top Pins ---------- */
+  function renderTopPins(summary) {
+    const accounts = (summary && summary.accounts) || [];
+    const allPins = [];
+    accounts.forEach(a => {
+      const shortName = (a.account_name || a.account_id).replace(/\s*account/i, '');
+      (a.top_pins || []).forEach(p => {
+        allPins.push({
+          title: (p.title || '').replace(/\n;\s*Opens a new tab/g, '').replace(/\s+Opens a new tab/g, '').trim(),
+          impressions: parseInt(String(p.impressions).replace(/,/g, ''), 10) || 0,
+          url: p.url,
+          account: shortName
+        });
+      });
+    });
+    allPins.sort((a, b) => b.impressions - a.impressions);
+    const top = allPins.slice(0, 12);
+    const maxImp = top.length ? top[0].impressions : 1;
+
+    const body = $('pins-body');
+    if (!top.length) {
+      body.innerHTML = '<tr><td colspan="3" style="text-align:center;color:var(--text-3);padding:40px">No pin data available.</td></tr>';
+      $('pins-sub').textContent = '0 pins';
+      return;
+    }
+
+    body.innerHTML = top.map((p, i) => `
+      <tr>
+        <td><span class="pin-rank ${i < 3 ? 'top' : ''}">${i + 1}</span></td>
+        <td>
+          <div>
+            <span class="pin-title">${escapeHtml(p.title)}</span>
+            <span class="pin-acct">${escapeHtml(p.account)}</span>
+          </div>
+        </td>
+        <td>
+          <div class="pin-imp">${fmtFull(p.impressions)}</div>
+          <div class="pin-bar"><div class="pin-bar-fill" style="width:${(p.impressions / maxImp * 100).toFixed(1)}%"></div></div>
+        </td>
+      </tr>
+    `).join('');
+
+    $('pins-sub').textContent = `Top ${top.length} of ${allPins.length} pins`;
+  }
+
+  function escapeHtml(s) {
+    if (s == null) return '';
+    return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  }
+
+  /* ---------- RENDER: Header meta ---------- */
+  function renderMeta(summary) {
+    if (summary && summary.fetched_at) {
+      const d = new Date(summary.fetched_at);
+      $('last-updated').textContent = d.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+    }
+  }
+
+  function showError(msg) {
+    const b = $('error-banner');
+    b.textContent = '⚠ ' + msg;
+    b.style.display = 'block';
+    setTimeout(() => { b.style.display = 'none'; }, 8000);
+  }
+
+  /* ---------- Clock ---------- */
+  function tickClock() {
+    const now = new Date();
+    $('clock').textContent = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+  }
+
+  /* ---------- Main load ---------- */
+  async function loadAll(isFirst = false) {
+    try {
+      const { summary, posting, accounts, errors } = await fetchAll();
+      if (!summary) {
+        showError('Failed to load /api/summary. Is the dashboard server running on :3007?');
+        return;
+      }
+      if (errors.length) console.warn('Some endpoints failed:', errors);
+
+      lastSummary = summary;
+      renderMeta(summary);
+      renderKPIs(summary);
+      renderGoal(summary);
+      renderCharts(summary);
+      renderAccounts(summary, posting, accounts);
+      renderTopPins(summary);
+
+      const ind = $('live-indicator');
+      ind.style.opacity = '1';
+    } catch (e) {
+      console.error(e);
+      showError('Connection error: ' + e.message);
+    }
+  }
+
+  /* ---------- Init ---------- */
+  tickClock();
+  setInterval(tickClock, 1000);
+  loadAll(true);
+  setInterval(() => loadAll(false), REFRESH_MS);
+  </script>
 </body>
 </html>

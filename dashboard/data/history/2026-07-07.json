@@ -1,0 +1,46 @@
+{
+  "date": "2026-07-07",
+  "saved_at": "2026-07-07T11:17:16.534688",
+  "accounts": {
+    "supplements": {
+      "name": "Supplements Account",
+      "impressions": 274230.0,
+      "engagements": 12190.0,
+      "outbound_clicks": 58.0,
+      "saves": 1840.0,
+      "total_audience": 215990.0
+    },
+    "cooking": {
+      "name": "Cooking Account",
+      "impressions": 118120.0,
+      "engagements": 4430.0,
+      "outbound_clicks": 24.0,
+      "saves": 989.0,
+      "total_audience": 102650.0
+    },
+    "beauty": {
+      "name": "Beauty Account",
+      "impressions": 0,
+      "engagements": 0,
+      "outbound_clicks": 0,
+      "saves": 0,
+      "total_audience": 0
+    },
+    "thunderpickle99": {
+      "name": "Pinterest Account thunderpickle99",
+      "impressions": 0,
+      "engagements": 0,
+      "outbound_clicks": 0,
+      "saves": 0,
+      "total_audience": 0
+    },
+    "fitness": {
+      "name": "Fitness & Weight Loss Account",
+      "impressions": 0,
+      "engagements": 0,
+      "outbound_clicks": 0,
+      "saves": 0,
+      "total_audience": 0
+    }
+  }
+}

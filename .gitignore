@@ -1,6 +1,8 @@
 # Sessions & credentials
 ~/.pinterest-session*
 ~/.wa-session*
+cookies/
+factory.py
 
 # Python
 __pycache__/
@@ -22,6 +24,11 @@ analytics-error-*.png
 dashboard-screenshot.png
 *-debug.png
 
+# Plans (private)
+EMPIRE-PLAN.md
+FULL-OPERATIONAL-PLAN.md
+WILDROSE-REPORT.md
+
 # Data (regenerated daily)
 stock-beauty/
 stock/
@@ -29,3 +36,4 @@ stock/
 *.png
 *.jpeg
 !dashboard/public/data/
+!dashboard/data/

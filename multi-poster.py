@@ -1,14 +1,17 @@
 #!/usr/bin/env python3
 """
-Pinterest Multi-Account Poster
+Pinterest Multi-Account Poster v2 — Anti-Ban Edition
 Reads accounts from accounts.json, runs scheduled accounts sequentially.
+Now with: staggered scheduling, human behavior, varied fingerprints,
+          cross-account interaction, and ramp-up for new accounts.
+
 Usage:
   python multi-poster.py --all              # Run all accounts scheduled for current hour
   python multi-poster.py --account <id>     # Run a single account
   python multi-poster.py --account <id> --dry-run
 """
-import json, os, sys, time, random, argparse, signal
-from datetime import datetime
+import json, os, sys, time, random, argparse, signal, hashlib
+from datetime import datetime, timedelta
 from pathlib import Path
 
 PIN_TIMEOUT = 90  # seconds before a single pin attempt is killed
@@ -18,11 +21,34 @@ LOGS_DIR = '/Users/jackserver/.openclaw/workspace/logs'
 ACCOUNTS_FILE = f'{WORKSPACE}/accounts.json'
 HISTORY_FILE = f'{WORKSPACE}/posted_history.json'
 TIMEOUT = 60000  # 60s page load timeout
-DEDUP_DAYS = 7
+DEDUP_DAYS = 3        # No identical title+product within 3 days
+IMAGE_DEDUP_DAYS = 30  # No image reuse on same account within 30 days
+TITLE_DEDUP_DAYS = 14  # No title reuse on same account within 14 days
 PRUNE_DAYS = 30
-DEFAULT_PIN_COUNT = 100
+DEFAULT_PIN_COUNT = 50  # Reduced from 100 to 50 for anti-ban
 
 os.makedirs(LOGS_DIR, exist_ok=True)
+
+# ─── Anti-ban fingerprint profiles ───
+# Each account gets a deterministic but unique browser fingerprint
+FINGERPRINT_PROFILES = [
+    {'width': 1280, 'height': 900,  'timezone': 'America/Edmonton',  'locale': 'en-US'},
+    {'width': 1366, 'height': 768,  'timezone': 'America/Vancouver', 'locale': 'en-CA'},
+    {'width': 1440, 'height': 900,  'timezone': 'America/Toronto',   'locale': 'en-US'},
+    {'width': 1536, 'height': 864,  'timezone': 'America/Halifax',   'locale': 'en-CA'},
+    {'width': 1280, 'height': 720,  'timezone': 'America/Winnipeg',  'locale': 'en-US'},
+    {'width': 1600, 'height': 900,  'timezone': 'America/Edmonton',  'locale': 'en-CA'},
+    {'width': 1920, 'height': 1080, 'timezone': 'America/Vancouver', 'locale': 'en-US'},
+    {'width': 1280, 'height': 800,  'timezone': 'America/Toronto',   'locale': 'en-CA'},
+    {'width': 1440, 'height': 810,  'timezone': 'America/Regina',    'locale': 'en-US'},
+    {'width': 1512, 'height': 982,  'timezone': 'America/Halifax',   'locale': 'en-CA'},
+]
+
+
+def get_fingerprint(account_id):
+    """Deterministic fingerprint per account based on its ID."""
+    h = int(hashlib.md5(account_id.encode()).hexdigest(), 16)
+    return FINGERPRINT_PROFILES[h % len(FINGERPRINT_PROFILES)]
 
 
 def get_logger(account_id):
@@ -72,19 +98,40 @@ def prune_history(history):
 
 
 def is_recently_posted(history, account_id, product, title, image=None):
-    """Check if same product+title OR same image was posted in last DEDUP_DAYS."""
+    """Check if same product+title OR same image was posted recently.
+    
+    Three layers of dedup:
+    1. Same title+product within DEDUP_DAYS (3 days) — hard block
+    2. Same title within TITLE_DEDUP_DAYS (14 days) — soft block
+    3. Same image within IMAGE_DEDUP_DAYS (30 days) — hard block
+    """
     from datetime import timedelta
-    cutoff = (datetime.now() - timedelta(days=DEDUP_DAYS)).isoformat()
+    now = datetime.now()
+    hard_cutoff = (now - timedelta(days=DEDUP_DAYS)).isoformat()
+    title_cutoff = (now - timedelta(days=TITLE_DEDUP_DAYS)).isoformat()
+    image_cutoff = (now - timedelta(days=IMAGE_DEDUP_DAYS)).isoformat()
     image_base = os.path.basename(image) if image else None
+
     for entry in history.get(account_id, []):
-        if entry.get('date', '') < cutoff:
-            continue
-        # Same title+product = duplicate
-        if entry.get('product') == product and entry.get('title') == title:
+        entry_date = entry.get('date', '')
+
+        # Layer 1: exact same title+product within 3 days
+        if (entry.get('product') == product and 
+            entry.get('title') == title and
+            entry_date >= hard_cutoff):
             return True
-        # Same image = duplicate
-        if image_base and entry.get('image') == image_base:
+
+        # Layer 2: same title text within 14 days
+        if (entry.get('title') == title and
+            entry_date >= title_cutoff):
             return True
+
+        # Layer 3: same image within 30 days
+        if (image_base and 
+            entry.get('image') == image_base and
+            entry_date >= image_cutoff):
+            return True
+
     return False
 
 
@@ -97,6 +144,115 @@ def record_post(history, account_id, pin):
     })
     history = prune_history(history)
     save_history(history)
+
+
+# ─── Anti-ban: account age + ramp-up ───
+
+def get_account_age_days(account_id):
+    """Get account age in days based on first pin in history."""
+    history = load_history()
+    pins = history.get(account_id, [])
+    if not pins:
+        return 0
+    first_date = min(p.get('date', datetime.now().isoformat()) for p in pins)
+    try:
+        first_dt = datetime.fromisoformat(first_date)
+        return max(0, (datetime.now() - first_dt).days)
+    except:
+        return 0
+
+
+def get_ramp_up_count(account_id, requested_count):
+    """
+    Ramp up new accounts gradually:
+    - Days 1-2: 5 pins/day
+    - Days 3-5: 10 pins/day
+    - Days 6-10: 20 pins/day
+    - Days 11-14: 30 pins/day
+    - Day 15+: full requested count (up to 50)
+    """
+    age = get_account_age_days(account_id)
+    if age <= 2:
+        max_pins = 5
+    elif age <= 5:
+        max_pins = 10
+    elif age <= 10:
+        max_pins = 20
+    elif age <= 14:
+        max_pins = 30
+    else:
+        max_pins = requested_count
+
+    actual = min(requested_count, max_pins)
+    if actual < requested_count:
+        print(f"  🐣 Ramp-up: account is {age} days old → {actual} pins (max {max_pins})")
+    return actual
+
+
+# ─── Anti-ban: human behavior ───
+
+def human_scroll(page, duration_sec=10):
+    """Simulate human scrolling on the current page."""
+    try:
+        end_time = time.time() + duration_sec
+        while time.time() < end_time:
+            scroll_amount = random.randint(100, 400)
+            page.mouse.wheel(0, scroll_amount)
+            time.sleep(random.uniform(0.3, 1.2))
+    except:
+        pass
+
+
+def human_browse_feed(page, log):
+    """Browse the home feed like a human — scroll, pause, maybe save a pin."""
+    try:
+        log("  👀 Browsing feed like a human...")
+        page.goto('https://www.pinterest.com/', timeout=30000, wait_until='domcontentloaded')
+        time.sleep(random.uniform(2, 4))
+
+        # Scroll the feed
+        human_scroll(page, random.randint(8, 15))
+
+        # Maybe save a pin (20% chance)
+        if random.random() < 0.2:
+            try:
+                save_buttons = page.locator('button[aria-label*="save" i], button[aria-label*="Save" i]').all()
+                if save_buttons and len(save_buttons) > 0:
+                    # Save a random visible one
+                    for btn in save_buttons[:5]:
+                        try:
+                            if btn.is_visible(timeout=1000):
+                                btn.click()
+                                time.sleep(random.uniform(1, 2))
+                                log("  💾 Saved someone else's pin (human behavior)")
+                                break
+                        except:
+                            continue
+            except:
+                pass
+
+        # Maybe click into a pin and look at it (15% chance)
+        if random.random() < 0.15:
+            try:
+                pin_links = page.locator('a[href*="/pin/"]').all()
+                if pin_links and len(pin_links) > 0:
+                    pin_links[random.randint(0, min(4, len(pin_links)-1))].click()
+                    time.sleep(random.uniform(2, 5))
+                    human_scroll(page, random.randint(3, 8))
+                    page.go_back()
+                    time.sleep(1)
+            except:
+                pass
+
+    except:
+        pass  # Never let browsing failure break posting
+
+
+def human_delay(log, min_sec=30, max_sec=90):
+    """Random human-like delay between pins."""
+    wait = random.randint(min_sec, max_sec)
+    log(f"  ⏳ Waiting {wait}s (human delay)")
+    time.sleep(wait)
 
 
 def create_working_page(context):
@@ -128,9 +284,29 @@ def ensure_pin_builder_ready(page):
         try:
             page.goto('https://ca.pinterest.com/pin-builder/', timeout=TIMEOUT, wait_until='domcontentloaded')
             time.sleep(3)
+            # Dismiss onboarding tour — click Next up to 5 times, then force-remove
+            for _ in range(5):
+                dismissed = False
+                for sel in ['button:has-text("Next")', 'button:has-text("Skip")',
+                            'button:has-text("Got it")', 'button:has-text("Done")',
+                            '[aria-label="Close"]', 'button:has-text("Dismiss")']:
+                    try:
+                        el = page.locator(sel).first
+                        if el.is_visible(timeout=400):
+                            el.click()
+                            time.sleep(0.8)
+                            dismissed = True
+                            break
+                    except Exception:
+                        pass
+                if not dismissed:
+                    break
             for _ in range(5):
                 page.keyboard.press('Escape')
                 time.sleep(0.2)
+            # Force-remove any remaining overlay
+            page.evaluate("document.querySelectorAll('div.FdRUHB, div.unzjra').forEach(el => el.remove());")
+            time.sleep(1)
 
             ensure_logged_in(page)
 
@@ -217,7 +393,9 @@ def select_board(page, board_name):
         return True
 
     try:
-        board_button.click()
+        # Remove overlay and force-click to bypass any remaining intercepts
+        page.evaluate("document.querySelectorAll('div.FdRUHB, div.unzjra').forEach(el => el.remove());")
+        board_button.click(force=True)
         time.sleep(2)
     except Exception:
         return True
@@ -270,15 +448,42 @@ def clear_drafts(page, log):
 
 def generate_pin(account, history=None):
     images = get_stock_images(account['stock_dir'])
-    # Try up to 20 times to find a non-duplicate combo
-    for _ in range(20):
+    acct_id = account['id']
+    
+    # Track images used in the last 30 days for this account
+    recent_images = set()
+    if history:
+        from datetime import timedelta
+        img_cutoff = (datetime.now() - timedelta(days=IMAGE_DEDUP_DAYS)).isoformat()
+        for entry in history.get(acct_id, []):
+            if entry.get('date', '') >= img_cutoff and entry.get('image'):
+                recent_images.add(entry['image'])
+
+    # Filter to images not used in last 30 days
+    available_images = [img for img in images if os.path.basename(img) not in recent_images]
+    
+    # If we've exhausted all images (account posted more than stock library size in 30 days),
+    # fall back to all images but warn
+    if not available_images and images:
+        print(f"   ⚠️ All {len(images)} images used in last {IMAGE_DEDUP_DAYS} days — reusing oldest")
+        available_images = images
+    elif len(available_images) < len(images) * 0.2:
+        print(f"   ⚠️ Only {len(available_images)} fresh images left (of {len(images)})")
+
+    # Try up to 30 times to find a non-duplicate combo
+    for _ in range(30):
         product = random.choice(account['products'])
         benefit = random.choice(product['benefits'])
         template = random.choice(account['title_templates'])
         title = template.format(product=product['name'], benefit=benefit)[:100]
-        image = random.choice(images) if images else None
-        if history is None or not is_recently_posted(history, account['id'], product['name'], title, image):
+        image = random.choice(available_images) if available_images else None
+        if history is None or not is_recently_posted(history, acct_id, product['name'], title, image):
             break
+    else:
+        # If we still can't find a unique combo after 30 tries, use it anyway
+        # but log it so we know the content pool is exhausted
+        print(f"   ⚠️ Content pool exhausted for {acct_id} — posting near-duplicate")
+    
     board = random.choice(account['boards'])
     link = random.choice(account['affiliate_links'])
 
@@ -332,9 +537,10 @@ def post_pin(context, pin):
             return False
 
         # Publish
+        page.evaluate("document.querySelectorAll('div.FdRUHB, div.unzjra, [data-test-id=\"onboarding-tooltip\"]').forEach(el => el.remove());")
         publish_btn = page.get_by_role('button', name='Publish')
         if publish_btn.count() > 0:
-            publish_btn.first.click()
+            publish_btn.first.click(force=True)
             time.sleep(6)
             
             # Verify the pin was actually created — look for confirmation
@@ -394,38 +600,68 @@ def _post_pin_with_timeout(context, pin, log, timeout_sec):
 
 def run_account(account, dry_run=False, count=DEFAULT_PIN_COUNT):
     log = get_logger(account['id'])
-    log(f"=== Starting {account['name']} ({account['id']}) — {count} pins ===")
+
+    # ─── Anti-ban: ramp up for new accounts ───
+    actual_count = get_ramp_up_count(account['id'], count)
+
+    log(f"=== Starting {account['name']} ({account['id']}) — {actual_count} pins ===")
     history = load_history()
 
     if dry_run:
         for i in range(3):
             pin = generate_pin(account, history)
             log(f"[DRY {i+1}] {pin['product']} | {pin['benefit']} | {pin['board']} | {pin['title'][:60]}")
-        log(f"[DRY RUN] Would post {count} pins for {account['id']}")
+        log(f"[DRY RUN] Would post {actual_count} pins for {account['id']}")
         return
 
     from playwright.sync_api import sync_playwright
 
-    session = os.path.expanduser(account['session_path'])
+    # ─── Anti-ban: unique fingerprint per account ───
+    fp = get_fingerprint(account['id'])
+    log(f"  🖥 Fingerprint: {fp['width']}x{fp['height']} | TZ: {fp['timezone']}")
+
     posted = 0
     failed = 0
 
+    # Support both persistent profile (session_path) and JSON cookies (cookie_path)
+    cookie_path = account.get('cookie_path')
+    session = os.path.expanduser(account['session_path']) if not cookie_path else None
+
     with sync_playwright() as p:
-        context = p.chromium.launch_persistent_context(
-            user_data_dir=session,
-            headless=True,
-            viewport={'width': 1280, 'height': 900}
-        )
+        if cookie_path:
+            browser = p.chromium.launch(headless=True)
+            context = browser.new_context(
+                viewport={'width': fp['width'], 'height': fp['height']},
+                timezone_id=fp['timezone'],
+                locale=fp['locale']
+            )
+            with open(os.path.expanduser(cookie_path)) as f:
+                context.add_cookies(json.load(f))
+        else:
+            browser = None
+            context = p.chromium.launch_persistent_context(
+                user_data_dir=session,
+                headless=True,
+                viewport={'width': fp['width'], 'height': fp['height']},
+                timezone_id=fp['timezone'],
+                locale=fp['locale']
+            )
         context.set_default_timeout(15000)
 
         try:
+            # ─── Anti-ban: browse feed first (act human) ───
+            browse_page = create_working_page(context)
+            human_browse_feed(browse_page, log)
+            browse_page.close()
+
+            # Clear drafts as before
             draft_page = create_working_page(context)
             clear_drafts(draft_page, log)
             draft_page.close()
 
-            for i in range(count):
+            for i in range(actual_count):
                 pin = generate_pin(account, history)
-                log(f"[{i+1}/{count}] {pin['product']} → {pin['board']}")
+                log(f"[{i+1}/{actual_count}] {pin['product']} → {pin['board']}")
 
                 result = _post_pin_with_timeout(context, pin, log, PIN_TIMEOUT)
 
@@ -435,7 +671,7 @@ def run_account(account, dry_run=False, count=DEFAULT_PIN_COUNT):
                     log(f"  ✅ {pin['title'][:60]}")
                 elif result == 'retry':
                     log(f"  ⏳ Retrying...")
-                    time.sleep(10)
+                    time.sleep(random.randint(10, 20))
                     result2 = _post_pin_with_timeout(context, pin, log, PIN_TIMEOUT)
                     if result2 == 'ok':
                         posted += 1
@@ -448,11 +684,21 @@ def run_account(account, dry_run=False, count=DEFAULT_PIN_COUNT):
                     failed += 1
                     log(f"  ❌ Failed: {pin['title'][:60]} ({result})")
 
-                wait = random.randint(5, 15)
-                time.sleep(wait)
+                # ─── Anti-ban: human-like delays between pins ───
+                # Every 10th pin, browse the feed briefly
+                if posted > 0 and posted % 10 == 0:
+                    log("  🧘 Taking a browsing break...")
+                    break_page = create_working_page(context)
+                    human_browse_feed(break_page, log)
+                    break_page.close()
+
+                # Random delay: 30-90 seconds between pins (was 5-15)
+                human_delay(log, min_sec=30, max_sec=90)
 
         finally:
             context.close()
+            if browser:
+                browser.close()
 
     log(f"=== Done {account['id']}: {posted} posted, {failed} failed ===")
 
