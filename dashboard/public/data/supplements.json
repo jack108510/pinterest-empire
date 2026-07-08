@@ -2,99 +2,99 @@
   "account_id": "supplements",
   "account_name": "Supplements Account",
   "handle": "Sadie \ud83e\udd89",
-  "fetched_at": "2026-07-07T12:46:04.673307",
+  "fetched_at": "2026-07-08T08:08:07.939935",
   "date_range": "last_30_days",
   "metrics": {
     "impressions": {
-      "value": 275220.0,
-      "display": "275.22k",
-      "change_pct": 143.0
+      "value": 277320.0,
+      "display": "277.32k",
+      "change_pct": 147.0
     },
     "engagements": {
-      "value": 12240.0,
-      "display": "12.24k",
-      "change_pct": 154.0
+      "value": 12320.0,
+      "display": "12.32k",
+      "change_pct": 158.0
     },
     "outbound_clicks": {
-      "value": 59.0,
-      "display": "59",
-      "change_pct": 216.0
+      "value": 60.0,
+      "display": "60",
+      "change_pct": 200.0
     },
     "saves": {
-      "value": 1850.0,
-      "display": "1.85k",
-      "change_pct": 135.0
+      "value": 1870.0,
+      "display": "1.87k",
+      "change_pct": 138.0
     },
     "total_audience": {
-      "value": 215990.0,
-      "display": "215.99k",
-      "change_pct": 131.0
+      "value": 222300.0,
+      "display": "222.3k",
+      "change_pct": 137.0
     },
     "engaged_audience": {
-      "value": 10150.0,
-      "display": "10.15k",
-      "change_pct": 146.0
+      "value": 10490.0,
+      "display": "10.49k",
+      "change_pct": 154.0
     }
   },
   "top_pins": [
     {
       "title": "The #1 Supplement Everyone Needs\n; Opens a new tab",
-      "impressions": "21,754",
+      "impressions": "21,994",
       "url": "https://www.pinterest.com/pin/1143844005378172363/"
     },
     {
       "title": "Real Results With Vitamin D3 + K2\n; Opens a new tab",
-      "impressions": "19,318",
+      "impressions": "19,338",
       "url": "https://www.pinterest.com/pin/1143844005377909994/"
     },
     {
       "title": "Melatonin Sleep Gummies Changed Everything\n; Opens a new tab",
-      "impressions": "13,248",
+      "impressions": "13,298",
       "url": "https://www.pinterest.com/pin/1143844005377696375/"
     },
     {
       "title": "3 Supplements That Actually Work\n; Opens a new tab",
-      "impressions": "9,858",
+      "impressions": "10,046",
       "url": "https://www.pinterest.com/pin/1143844005377718035/"
     },
     {
       "title": "My Secret to Stay Asleep\n; Opens a new tab",
-      "impressions": "9,515",
+      "impressions": "9,524",
       "url": "https://www.pinterest.com/pin/1143844005377718955/"
     },
     {
+      "title": "Stop Wasting Money on the Wrong Supplements\n; Opens a new tab",
+      "impressions": "9,451",
+      "url": "https://www.pinterest.com/pin/1143844005378171585/"
+    },
+    {
       "title": "Game Changer for Detox\n; Opens a new tab",
-      "impressions": "9,340",
+      "impressions": "9,396",
       "url": "https://www.pinterest.com/pin/1143844005377909025/"
     },
     {
       "title": "Stop Wasting Money on the Wrong Supplements\n; Opens a new tab",
-      "impressions": "9,321",
-      "url": "https://www.pinterest.com/pin/1143844005378171585/"
-    },
-    {
-      "title": "Stop Wasting Money on the Wrong Supplements\n; Opens a new tab",
-      "impressions": "6,841",
+      "impressions": "6,871",
       "url": "https://www.pinterest.com/pin/1143844005378172694/"
     },
     {
-      "title": "Appetite Control Starts Here\n; Opens a new tab",
-      "impressions": "6,759",
-      "url": "https://www.pinterest.com/pin/1143844005377718968/"
-    },
-    {
       "title": "Don't Buy Turmeric Curcumin Until You Read This\n; Opens a new tab",
-      "impressions": "6,680",
+      "impressions": "6,829",
       "url": "https://www.pinterest.com/pin/1143844005378172571/"
     },
     {
+      "title": "Appetite Control Starts Here\n; Opens a new tab",
+      "impressions": "6,760",
+      "url": "https://www.pinterest.com/pin/1143844005377718968/"
+    },
+    {
       "title": "Doctors Recommend This For Detox\n; Opens a new tab",
-      "impressions": "6,645",
+      "impressions": "6,703",
       "url": "https://www.pinterest.com/pin/1143844005377973743/"
     },
     {
       "title": "I Tried Turmeric Curcumin for 60 Days\n; Opens a new tab",
-      "impressions": "6,354",
+      "impressions": "6,404",
       "url": "https://www.pinterest.com/pin/1143844005378107375/"
     },
     {
@@ -104,14 +104,14 @@
     },
     {
       "title": "Best Supplement I've Ever Tried\n; Opens a new tab",
-      "impressions": "6,019",
+      "impressions": "6,060",
       "url": "https://www.pinterest.com/pin/1143844005378234189/"
     },
     {
       "title": "Why Everyone's Talking About Melatonin Sleep Gummies\n; Opens a new tab",
-      "impressions": "5,832",
+      "impressions": "5,870",
       "url": "https://www.pinterest.com/pin/1143844005377908718/"
     }
   ],
-  "raw_summary": "Impressions\n,\n275.22k\n,\n143%\nEngagements\n,\n12.24k\n,\n154%\nOutbound clicks\n,\n59\n,\n216%\nSaves\n,\n1.85k\n,\n135%\nTotal audience\n,\n215.99k\n,\n131%\nEngaged audience\n,\n10.15k\n,\n146%"
+  "raw_summary": "Impressions\n,\n277.32k\n,\n147%\nEngagements\n,\n12.32k\n,\n158%\nOutbound clicks\n,\n60\n,\n200%\nSaves\n,\n1.87k\n,\n138%\nTotal audience\n,\n222.3k\n,\n137%\nEngaged audience\n,\n10.49k\n,\n154%"
 }
