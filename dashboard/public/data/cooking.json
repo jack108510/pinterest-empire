@@ -2,17 +2,17 @@
   "account_id": "cooking",
   "account_name": "Cooking Account",
   "handle": "Q",
-  "fetched_at": "2026-07-08T08:08:17.964987",
+  "fetched_at": "2026-07-09T08:01:50.780912",
   "date_range": "last_30_days",
   "metrics": {
     "impressions": {
-      "value": 115210.0,
-      "display": "115.21k",
+      "value": 115500.0,
+      "display": "115.5k",
       "change_pct": 0
     },
     "engagements": {
-      "value": 4270.0,
-      "display": "4.27k",
+      "value": 4290.0,
+      "display": "4.29k",
       "change_pct": 0
     },
     "outbound_clicks": {
@@ -21,13 +21,13 @@
       "change_pct": 0
     },
     "saves": {
-      "value": 964.0,
-      "display": "964",
+      "value": 972.0,
+      "display": "972",
       "change_pct": 0
     },
     "total_audience": {
-      "value": 100470.0,
-      "display": "100.47k",
+      "value": 100510.0,
+      "display": "100.51k",
       "change_pct": 0
     },
     "engaged_audience": {
@@ -39,7 +39,7 @@
   "top_pins": [
     {
       "title": "Restaurant-quality dinner for under $10 \ud83d\udcb0\n; Opens a new tab",
-      "impressions": "53,524",
+      "impressions": "53,527",
       "url": "https://www.pinterest.com/pin/1110911433108143218/"
     },
     {
@@ -49,7 +49,7 @@
     },
     {
       "title": "Healthy swaps that actually taste good \ud83e\udd51\n; Opens a new tab",
-      "impressions": "7,324",
+      "impressions": "7,325",
       "url": "https://www.pinterest.com/pin/1110911433108235153/"
     },
     {
@@ -59,17 +59,17 @@
     },
     {
       "title": "I tried the viral recipe and here's what happened \ud83e\udd2f\n; Opens a new tab",
-      "impressions": "4,266",
+      "impressions": "4,280",
       "url": "https://www.pinterest.com/pin/1110911433108258151/"
     },
     {
       "title": "Magnesium Glycinate \u2014 Everyday Essential\n; Opens a new tab",
-      "impressions": "3,785",
+      "impressions": "3,832",
       "url": "https://www.pinterest.com/pin/1110911433111469407/"
     },
     {
       "title": "I tried the viral recipe and here's what happened \ud83e\udd2f\n; Opens a new tab",
-      "impressions": "3,695",
+      "impressions": "3,700",
       "url": "https://www.pinterest.com/pin/1110911433109054431/"
     },
     {
@@ -94,7 +94,7 @@
     },
     {
       "title": "My grandmother's recipe gone viral \ud83d\udc75\n; Opens a new tab",
-      "impressions": "1,661",
+      "impressions": "1,668",
       "url": "https://www.pinterest.com/pin/1110911433108172261/"
     },
     {
@@ -103,15 +103,15 @@
       "url": "https://www.pinterest.com/pin/1110911433108232248/"
     },
     {
+      "title": "Restaurant-quality dinner for under $10 \ud83d\udcb0\n; Opens a new tab",
+      "impressions": "586",
+      "url": "https://www.pinterest.com/pin/1110911433108117160/"
+    },
+    {
       "title": "Dinner ideas for people who hate cooking \ud83d\ude05\n; Opens a new tab",
       "impressions": "582",
       "url": "https://www.pinterest.com/pin/1110911433108232070/"
-    },
-    {
-      "title": "Restaurant-quality dinner for under $10 \ud83d\udcb0\n; Opens a new tab",
-      "impressions": "580",
-      "url": "https://www.pinterest.com/pin/1110911433108117160/"
     }
   ],
-  "raw_summary": "Impressions\n,\n115.21k\n,\nEngagements\n,\n4.27k\n,\nOutbound clicks\n,\n24\n,\nSaves\n,\n964\n,\nTotal audience\n,\n100.47k\n,\nEngaged audience\n,\n3.65k\n,"
+  "raw_summary": "Impressions\n,\n115.5k\n,\nEngagements\n,\n4.29k\n,\nOutbound clicks\n,\n24\n,\nSaves\n,\n972\n,\nTotal audience\n,\n100.51k\n,\nEngaged audience\n,\n3.65k\n,"
 }
