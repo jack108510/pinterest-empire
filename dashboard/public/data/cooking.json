@@ -2,18 +2,18 @@
   "account_id": "cooking",
   "account_name": "Cooking Account",
   "handle": "Q",
-  "fetched_at": "2026-07-11T08:01:46.500264",
+  "fetched_at": "2026-07-12T08:02:56.036150",
   "date_range": "last_30_days",
   "metrics": {
     "impressions": {
-      "value": 104080.0,
-      "display": "104.08k",
-      "change_pct": 67.0
+      "value": 99460.0,
+      "display": "99.46k",
+      "change_pct": 43.0
     },
     "engagements": {
-      "value": 3890.0,
-      "display": "3.89k",
-      "change_pct": 59.0
+      "value": 3730.0,
+      "display": "3.73k",
+      "change_pct": 39.0
     },
     "outbound_clicks": {
       "value": 22.0,
@@ -21,97 +21,97 @@
       "change_pct": 4.7
     },
     "saves": {
-      "value": 913.0,
-      "display": "913",
-      "change_pct": 57.0
+      "value": 899.0,
+      "display": "899",
+      "change_pct": 48.0
     },
     "total_audience": {
-      "value": 89060.0,
-      "display": "89.06k",
-      "change_pct": 67.0
+      "value": 84730.0,
+      "display": "84.73k",
+      "change_pct": 44.0
     },
     "engaged_audience": {
-      "value": 3250.0,
-      "display": "3.25k",
-      "change_pct": 58.0
+      "value": 3090.0,
+      "display": "3.09k",
+      "change_pct": 36.0
     }
   },
   "top_pins": [
     {
       "title": "Restaurant-quality dinner for under $10 \ud83d\udcb0\n; Opens a new tab",
-      "impressions": "53,529",
+      "impressions": "54,626",
       "url": "https://www.pinterest.com/pin/1110911433108143218/"
     },
     {
-      "title": "The sauce that goes with literally everything \ud83e\uded5\n; Opens a new tab",
-      "impressions": "6,004",
-      "url": "https://www.pinterest.com/pin/1110911433108232371/"
-    },
-    {
-      "title": "Healthy swaps that actually taste good \ud83e\udd51\n; Opens a new tab",
-      "impressions": "4,272",
-      "url": "https://www.pinterest.com/pin/1110911433108235153/"
-    },
-    {
       "title": "I tried the viral recipe and here's what happened \ud83e\udd2f\n; Opens a new tab",
-      "impressions": "4,097",
+      "impressions": "4,289",
       "url": "https://www.pinterest.com/pin/1110911433108258151/"
     },
     {
       "title": "Magnesium Glycinate \u2014 Everyday Essential\n; Opens a new tab",
-      "impressions": "3,919",
+      "impressions": "3,988",
       "url": "https://www.pinterest.com/pin/1110911433111469407/"
     },
     {
+      "title": "The sauce that goes with literally everything \ud83e\uded5\n; Opens a new tab",
+      "impressions": "3,940",
+      "url": "https://www.pinterest.com/pin/1110911433108232371/"
+    },
+    {
+      "title": "Healthy swaps that actually taste good \ud83e\udd51\n; Opens a new tab",
+      "impressions": "3,172",
+      "url": "https://www.pinterest.com/pin/1110911433108235153/"
+    },
+    {
       "title": "Restaurant-quality dinner for under $10 \ud83d\udcb0\n; Opens a new tab",
-      "impressions": "3,611",
+      "impressions": "3,171",
       "url": "https://www.pinterest.com/pin/1110911433108258205/"
     },
     {
       "title": "I tried the viral recipe and here's what happened \ud83e\udd2f\n; Opens a new tab",
-      "impressions": "2,720",
+      "impressions": "2,586",
       "url": "https://www.pinterest.com/pin/1110911433109054431/"
     },
     {
-      "title": "My grandmother's recipe gone viral \ud83d\udc75\n; Opens a new tab",
-      "impressions": "2,087",
-      "url": "https://www.pinterest.com/pin/1110911433108233377/"
-    },
-    {
       "title": "Healthy swaps that actually taste good \ud83e\udd51\n; Opens a new tab",
-      "impressions": "2,059",
+      "impressions": "1,764",
       "url": "https://www.pinterest.com/pin/1110911433108234645/"
     },
     {
       "title": "My grandmother's recipe gone viral \ud83d\udc75\n; Opens a new tab",
-      "impressions": "1,775",
-      "url": "https://www.pinterest.com/pin/1110911433108241389/"
-    },
-    {
-      "title": "My grandmother's recipe gone viral \ud83d\udc75\n; Opens a new tab",
-      "impressions": "1,672",
+      "impressions": "1,675",
       "url": "https://www.pinterest.com/pin/1110911433108172261/"
     },
     {
-      "title": "The air fryer recipe everyone's obsessed with \ud83d\udd25\n; Opens a new tab",
-      "impressions": "1,044",
-      "url": "https://www.pinterest.com/pin/1110911433108233152/"
+      "title": "My grandmother's recipe gone viral \ud83d\udc75\n; Opens a new tab",
+      "impressions": "1,585",
+      "url": "https://www.pinterest.com/pin/1110911433108233377/"
+    },
+    {
+      "title": "My grandmother's recipe gone viral \ud83d\udc75\n; Opens a new tab",
+      "impressions": "1,490",
+      "url": "https://www.pinterest.com/pin/1110911433108241389/"
     },
     {
       "title": "Restaurant-quality dinner for under $10 \ud83d\udcb0\n; Opens a new tab",
-      "impressions": "776",
+      "impressions": "940",
       "url": "https://www.pinterest.com/pin/1110911433109253167/"
     },
     {
+      "title": "The air fryer recipe everyone's obsessed with \ud83d\udd25\n; Opens a new tab",
+      "impressions": "789",
+      "url": "https://www.pinterest.com/pin/1110911433108233152/"
+    },
+    {
       "title": "The one pan trick that saves hours of cleanup \u2728\n; Opens a new tab",
-      "impressions": "634",
+      "impressions": "630",
       "url": "https://www.pinterest.com/pin/1110911433108496191/"
     },
     {
       "title": "Restaurant-quality dinner for under $10 \ud83d\udcb0\n; Opens a new tab",
-      "impressions": "615",
+      "impressions": "623",
       "url": "https://www.pinterest.com/pin/1110911433108117160/"
     }
   ],
-  "raw_summary": "Impressions\n,\n104.08k\n,\n67%\nEngagements\n,\n3.89k\n,\n59%\nOutbound clicks\n,\n22\n,\n4.7%\nSaves\n,\n913\n,\n57%\nTotal audience\n,\n89.06k\n,\n67%\nEngaged audience\n,\n3.25k\n,\n58%"
+  "raw_summary": "Impressions\n,\n99.46k\n,\n43%\nEngagements\n,\n3.73k\n,\n39%\nOutbound clicks\n,\n22\n,\n4.7%\nSaves\n,\n899\n,\n48%\nTotal audience\n,\n84.73k\n,\n44%\nEngaged audience\n,\n3.09k\n,\n36%"
 }
