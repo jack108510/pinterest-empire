@@ -1,41 +1,10 @@
 {
   "account_id": "amber_ridge89",
   "account_name": "Pinterest Account amber_ridge89",
-  "handle": "A",
-  "fetched_at": "2026-07-12T08:03:25.208263",
+  "handle": "Pinterest Account amber_ridge89",
+  "fetched_at": "2026-07-13T08:04:05.658813",
   "date_range": "last_30_days",
-  "metrics": {
-    "impressions": {
-      "value": 0,
-      "display": "-",
-      "change_pct": 0
-    },
-    "engagements": {
-      "value": 0,
-      "display": "-",
-      "change_pct": 0
-    },
-    "outbound_clicks": {
-      "value": 0,
-      "display": "-",
-      "change_pct": 0
-    },
-    "saves": {
-      "value": 0,
-      "display": "-",
-      "change_pct": 0
-    },
-    "total_audience": {
-      "value": 0,
-      "display": "-",
-      "change_pct": 0
-    },
-    "engaged_audience": {
-      "value": 0,
-      "display": "-",
-      "change_pct": 0
-    }
-  },
+  "metrics": {},
   "top_pins": [],
-  "raw_summary": "Impressions\n,\n-\n,\nEngagements\n,\n-\n,\nOutbound clicks\n,\n-\n,\nSaves\n,\n-\n,\nTotal audience\n,\n-\n,\nEngaged audience\n,\n-\n,"
+  "raw_summary": ""
 }
