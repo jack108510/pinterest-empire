@@ -2,17 +2,17 @@
   "account_id": "coral_fern39",
   "account_name": "Pinterest Account coral_fern39",
   "handle": "C",
-  "fetched_at": "2026-07-12T08:03:05.703430",
+  "fetched_at": "2026-07-13T08:03:46.108993",
   "date_range": "last_30_days",
   "metrics": {
     "impressions": {
-      "value": 0.0,
-      "display": "0",
+      "value": 159.0,
+      "display": "159",
       "change_pct": 0
     },
     "engagements": {
-      "value": 0.0,
-      "display": "0",
+      "value": 3.0,
+      "display": "3",
       "change_pct": 0
     },
     "outbound_clicks": {
@@ -36,6 +36,37 @@
       "change_pct": 0
     }
   },
-  "top_pins": [],
-  "raw_summary": "Impressions\n,\n0\n,\nEngagements\n,\n0\n,\nOutbound clicks\n,\n0\n,\nSaves\n,\n0\n,\nTotal audience\n,\n0\n,\nEngaged audience\n,\n0\n,"
+  "top_pins": [
+    {
+      "title": "5 Signs You Need Elderberry Immune Gummies\n; Opens a new tab",
+      "impressions": "119",
+      "url": "https://www.pinterest.com/pin/1098245059160240896/"
+    },
+    {
+      "title": "Game Changer for Stronger Nails\n; Opens a new tab",
+      "impressions": "21",
+      "url": "https://www.pinterest.com/pin/1098245059160243285/"
+    },
+    {
+      "title": "The Morning Supplement Stack That Works\n; Opens a new tab",
+      "impressions": "10",
+      "url": "https://www.pinterest.com/pin/1098245059160240355/"
+    },
+    {
+      "title": "I Tried Elderberry Immune Gummies for 60 Days\n; Opens a new tab",
+      "impressions": "7",
+      "url": "https://www.pinterest.com/pin/1098245059160244718/"
+    },
+    {
+      "title": "The Truth About Magnesium Glycinate\n; Opens a new tab",
+      "impressions": "1",
+      "url": "https://www.pinterest.com/pin/1098245059160239690/"
+    },
+    {
+      "title": "Why I Start Every Day With Pre-Workout Energy\n; Opens a new tab",
+      "impressions": "1",
+      "url": "https://www.pinterest.com/pin/1098245059160241764/"
+    }
+  ],
+  "raw_summary": "Impressions\n,\n159\n,\nEngagements\n,\n3\n,\nOutbound clicks\n,\n0\n,\nSaves\n,\n0\n,\nTotal audience\n,\n0\n,\nEngaged audience\n,\n0\n,"
 }
