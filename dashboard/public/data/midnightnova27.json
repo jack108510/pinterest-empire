@@ -1,41 +1,10 @@
 {
   "account_id": "midnightnova27",
   "account_name": "Pinterest Account midnightnova27",
-  "handle": "M",
-  "fetched_at": "2026-07-13T08:03:55.978473",
+  "handle": "Pinterest Account midnightnova27",
+  "fetched_at": "2026-07-14T08:03:23.410446",
   "date_range": "last_30_days",
-  "metrics": {
-    "impressions": {
-      "value": 0.0,
-      "display": "0",
-      "change_pct": 0
-    },
-    "engagements": {
-      "value": 0.0,
-      "display": "0",
-      "change_pct": 0
-    },
-    "outbound_clicks": {
-      "value": 0.0,
-      "display": "0",
-      "change_pct": 0
-    },
-    "saves": {
-      "value": 0.0,
-      "display": "0",
-      "change_pct": 0
-    },
-    "total_audience": {
-      "value": 0.0,
-      "display": "0",
-      "change_pct": 0
-    },
-    "engaged_audience": {
-      "value": 0.0,
-      "display": "0",
-      "change_pct": 0
-    }
-  },
+  "metrics": {},
   "top_pins": [],
-  "raw_summary": "Impressions\n,\n0\n,\nEngagements\n,\n0\n,\nOutbound clicks\n,\n0\n,\nSaves\n,\n0\n,\nTotal audience\n,\n0\n,\nEngaged audience\n,\n0\n,"
+  "raw_summary": ""
 }
